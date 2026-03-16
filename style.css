@@ -1,0 +1,64 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.table_container {
+  width: 50%;
+  height: 600px;
+  margin: auto;
+}
+
+table {
+  width: 100%;
+  height: 100%;
+  table-layout: auto;
+}
+
+table,
+th,
+td {
+  border: 7px solid black;
+  border-collapse: collapse;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.red {
+  background-color: red;
+}
+
+.black {
+  background-color: black;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.width_28 {
+  width: 28%;
+}
+
+.width_45 {
+  width: 45%;
+}
+
+.width_50 {
+  width: 50%;
+}
+
+.width_10 {
+  width: 10%;
+}
+
+.height_13 {
+  height: 13%;
+}
+
+.height_25 {
+  height: 25%;
+}
