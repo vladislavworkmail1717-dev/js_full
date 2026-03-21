@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Normalize.css</title>
+
+    <!-- ПІДКЛЮЧЕННЯ normalize -->
+    <link rel="stylesheet" href="../style/normalize.css">
+
+    <style>
+      :root {
+        --primary: #667eea;
+        --secondary: black;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: #f5f7fa;
+      }
+
+      header {
+        background: linear-gradient(135deg, #4facfe, #00f2fe);
+        color: white;
+        padding: 25px;
+        text-align: center;
+        position: relative;
+      }
+
+      .back-btn {
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        text-decoration: none;
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        backdrop-filter: blur(5px);
+        transition: 0.3s;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .back-btn:hover {
+        background: white;
+        color: var(--secondary);
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 30px auto;
+        padding: 20px;
+      }
+
+      .card {
+        background: white;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .demo {
+        border: 2px dashed #ccc;
+        padding: 15px;
+        margin-top: 10px;
+      }
+
+      button {
+        padding: 10px 15px;
+        background: #4facfe;
+        border: none;
+        color: white;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+
+      ul {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="../index.html" class="back-btn">⬅ Назад</a>
+      <h1>Normalize.css</h1>
+      <p>Нормалізація стилів браузера</p>
+    </header>
+
+    <div class="container">
+      <div class="card">
+        <h2>📖 Що це таке?</h2>
+        <p>
+          Normalize.css — це файл стилів, який робить відображення HTML
+          елементів однаковим у різних браузерах. Він не видаляє стилі повністю,
+          а лише виправляє відмінності між браузерами.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>🧪 Приклад елементів</h2>
+        <p>
+          Нижче показані стандартні HTML елементи після застосування
+          Normalize.css:
+        </p>
+
+        <div class="demo">
+          <h1>Заголовок H1</h1>
+          <p>Це звичайний текст абзацу.</p>
+
+          <ul>
+            <li>Елемент списку 1</li>
+            <li>Елемент списку 2</li>
+          </ul>
+
+          <button>Кнопка</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>📊 Висновок</h2>
+        <p>
+          Після підключення Normalize.css сторінка виглядає більш стабільно у
+          різних браузерах. Стилі залишаються природними, але стають однаковими,
+          що значно спрощує подальшу розробку.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

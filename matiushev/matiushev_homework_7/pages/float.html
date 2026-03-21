@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float і Clear</title>
+
+    <style>
+      :root {
+        --primary: #667eea;
+        --secondary: black;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f5f7fa;
+      }
+
+      header {
+        background: linear-gradient(135deg, #ff6a88, #ff99ac);
+        color: white;
+        padding: 25px;
+        text-align: center;
+        position: relative;
+      }
+
+      .back-btn {
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        text-decoration: none;
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        backdrop-filter: blur(5px);
+        transition: 0.3s;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .back-btn:hover {
+        background: white;
+        color: var(--secondary);
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 30px auto;
+        padding: 20px;
+      }
+
+      .card {
+        background: white;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .demo {
+        border: 2px dashed #ccc;
+        padding: 15px;
+        margin-top: 10px;
+      }
+
+      /* FLOAT BOXES */
+      .float-box {
+        width: 150px;
+        height: 150px;
+        border-radius: 10px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      }
+
+      .red {
+        background: #ff4d4d;
+      }
+
+      .blue {
+        background: #4da6ff;
+      }
+
+      /* ✅ ВАЖЛИВО: різні float */
+      .float-left {
+        float: left;
+        margin-right: 15px;
+      }
+
+      .float-right {
+        float: right;
+        margin-left: 15px;
+      }
+
+      .text {
+        line-height: 1.6;
+      }
+
+      /* CLEAR */
+      .clear {
+        clear: both;
+        background: #ddd;
+        padding: 10px;
+        margin-top: 15px;
+        border-radius: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="../index.html" class="back-btn">⬅ Назад</a>
+      <h1>Float і Clear</h1>
+      <p>Обтікання елементів та контроль потоку</p>
+    </header>
+
+    <div class="container">
+      <!-- FLOAT -->
+      <div class="card">
+        <h2>🌊 Float (обтікання з двох сторін)</h2>
+        <p>
+          Один елемент "пливе" ліворуч, інший — праворуч. Текст автоматично
+          заповнює простір між ними.
+        </p>
+
+        <div class="demo">
+          <div class="float-box red float-left">Left</div>
+          <div class="float-box blue float-right">Right</div>
+
+          <p class="text">
+            Цей текст обтікає елементи з обох сторін. Лівий блок притискається
+            до лівого краю, правий — до правого. Текст рівномірно заповнює
+            простір між ними, створюючи класичний ефект обтікання. Саме так
+            раніше будували макети сайтів до появи flex і grid.
+          </p>
+        </div>
+      </div>
+
+      <!-- CLEAR -->
+      <div class="card">
+        <h2>🧹 Clear (очищення обтікання)</h2>
+        <p>
+          Властивість clear "скидає" обтікання і переносить елемент нижче
+          float-блоків.
+        </p>
+
+        <div class="demo">
+          <div class="float-box red float-left">Left</div>
+          <div class="float-box blue float-right">Right</div>
+
+          <p class="text">Цей текст ще обтікає елементи зліва і справа.</p>
+
+          <p class="clear">
+            А цей текст вже не обтікає — він починається нижче всіх float
+            елементів.
+          </p>
+        </div>
+      </div>
+
+      <!-- ВИСНОВОК -->
+      <div class="card">
+        <h2>📊 Висновок</h2>
+        <p>
+          Float дозволяє створювати обтікання елементів з різних сторін.
+          Властивість clear допомагає завершити це обтікання. У сучасній верстці
+          замість float частіше використовують flexbox або grid.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

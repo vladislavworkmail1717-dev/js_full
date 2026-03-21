@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display + Box-sizing</title>
+
+    <style>
+      :root {
+        --primary: #667eea;
+        --secondary: black;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f5f7fa;
+      }
+
+      header {
+        background: linear-gradient(135deg, #43e97b, #38f9d7);
+        color: white;
+        padding: 25px;
+        text-align: center;
+        position: relative;
+      }
+
+      .back-btn {
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        text-decoration: none;
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        backdrop-filter: blur(5px);
+        transition: 0.3s;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .back-btn:hover {
+        background: white;
+        color: var(--secondary);
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 30px auto;
+        padding: 20px;
+      }
+
+      .card {
+        background: white;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .demo {
+        border: 2px dashed #ccc;
+        padding: 15px;
+        margin-top: 10px;
+      }
+
+      /* Display demo */
+      .block {
+        display: block;
+        background: lightblue;
+        margin: 5px 0;
+        padding: 10px;
+      }
+
+      /* ✅ ВИПРАВЛЕННЯ INLINE */
+      .inline-demo {
+        display: flex;
+        gap: 5px;
+        margin-top: 5px;
+      }
+
+      .inline {
+        background: gold;
+        padding: 5px;
+      }
+
+      .flex {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .flex div {
+        background: lightgreen;
+        padding: 15px;
+        flex: 1;
+      }
+
+      /* Box-sizing demo */
+      .box-container {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .box {
+        width: 200px;
+        padding: 20px;
+        border: 5px solid black;
+        background: #ddd;
+      }
+
+      .content-box {
+        box-sizing: content-box;
+      }
+
+      .border-box {
+        box-sizing: border-box;
+        background: #a0e7e5;
+      }
+
+      .label {
+        font-weight: bold;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <a href="../index.html" class="back-btn">⬅ Назад</a>
+      <h1>Display + Box-sizing</h1>
+      <p>Відображення елементів і розрахунок розмірів</p>
+    </header>
+
+    <div class="container">
+      <!-- DISPLAY -->
+      <div class="card">
+        <h2>📦 Властивість display</h2>
+        <p>
+          Властивість display визначає, як елемент поводиться на сторінці: як
+          блок, рядковий елемент або контейнер (flex).
+        </p>
+
+        <div class="demo">
+          <div class="label">Block (займає весь рядок)</div>
+          <div class="block">Block 1</div>
+          <div class="block">Block 2</div>
+
+          <div class="label">Inline (в одному рядку)</div>
+
+          <!-- ✅ БЕЗ ПРОБІЛІВ -->
+          <div class="inline-demo">
+            <span class="inline">Inline 1</span>
+            <span class="inline">Inline 2</span>
+          </div>
+
+          <div class="label">Flex (гнучкий контейнер)</div>
+          <div class="flex">
+            <div>Flex 1</div>
+            <div>Flex 2</div>
+            <div>Flex 3</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BOX SIZING -->
+      <div class="card">
+        <h2>📏 Box-sizing</h2>
+        <p>Властивість box-sizing визначає, як обчислюється ширина елемента:</p>
+
+        <ul>
+          <li><b>content-box</b> — padding і border додаються до ширини</li>
+          <li><b>border-box</b> — padding і border входять у ширину</li>
+        </ul>
+
+        <div class="demo">
+          <div class="box-container">
+            <div>
+              <div class="box content-box">content-box</div>
+              <p>Реальна ширина більша за 200px</p>
+            </div>
+
+            <div>
+              <div class="box border-box">border-box</div>
+              <p>Ширина = 200px (з padding і border)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ВИСНОВОК -->
+      <div class="card">
+        <h2>📊 Висновок</h2>
+        <p>
+          Властивість display керує тим, як елементи розміщуються на сторінці.
+          Box-sizing дозволяє контролювати розміри блоків.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

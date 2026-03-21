@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блокові та інлайнові</title>
+
+    <style>
+      :root {
+        --primary: #667eea;
+        --secondary: black;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f5f7fa;
+      }
+
+      header {
+        background: linear-gradient(135deg, #4facfe, #00f2fe);
+        color: white;
+        padding: 25px;
+        text-align: center;
+        position: relative;
+      }
+
+      .back-btn {
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        text-decoration: none;
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        backdrop-filter: blur(5px);
+        transition: 0.3s;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .back-btn:hover {
+        background: white;
+        color: var(--secondary);
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 30px auto;
+        padding: 20px;
+      }
+
+      .card {
+        background: white;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .block-demo div {
+        background: lightblue;
+        margin: 10px 0;
+        padding: 15px;
+        border-radius: 6px;
+      }
+
+      .inline-demo span {
+        background: gold;
+        padding: 5px;
+        border-radius: 4px;
+      }
+
+      .info {
+        color: #555;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="../index.html" class="back-btn">⬅ Назад</a>
+      <h1>Блокові та інлайнові елементи</h1>
+      <p>Порівняння поведінки елементів</p>
+    </header>
+
+    <div class="container">
+      <div class="card">
+        <h2>🔷 Блокові елементи (div)</h2>
+        <p class="info">
+          Блокові елементи займають всю ширину рядка і переносяться на новий
+          рядок.
+        </p>
+
+        <div class="block-demo">
+          <div>Це блок 1</div>
+          <div>Це блок 2</div>
+          <div>Це блок 3</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>🟡 Інлайнові елементи (span)</h2>
+        <p class="info">
+          Інлайнові елементи не переносяться на новий рядок і займають тільки
+          потрібну ширину.
+        </p>
+
+        <p class="inline-demo">
+          Це <span>інлайновий</span> текст
+          <span>в одному рядку</span>
+          <span>без переносу</span>
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>📊 Висновок</h2>
+        <p>
+          Основна різниця між блоковими та інлайновими елементами полягає в їх
+          поведінці: блокові створюють новий рядок і займають всю ширину, а
+          інлайнові залишаються в межах тексту і не порушують потік.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

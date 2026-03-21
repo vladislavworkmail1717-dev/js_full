@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overflow</title>
+
+    <style>
+      :root {
+        --primary: #667eea;
+        --secondary: black;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f5f7fa;
+      }
+
+      header {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        padding: 25px;
+        text-align: center;
+        position: relative;
+      }
+
+      .back-btn {
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        text-decoration: none;
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        backdrop-filter: blur(5px);
+        transition: 0.3s;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .back-btn:hover {
+        background: white;
+        color: var(--secondary);
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 30px auto;
+        padding: 20px;
+      }
+
+      .card {
+        background: white;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .demo {
+        border: 2px dashed #ccc;
+        padding: 15px;
+        margin-top: 10px;
+      }
+
+      .box {
+        width: 250px;
+        height: 120px;
+        border: 2px solid black;
+        margin-bottom: 15px;
+        padding: 10px;
+      }
+
+      .hidden {
+        overflow: hidden;
+        background: #ffd6d6;
+      }
+
+      .scroll {
+        overflow: scroll;
+        background: #d6f5ff;
+      }
+
+      .auto {
+        overflow: auto;
+        background: #d6ffd6;
+      }
+
+      .visible {
+        overflow: visible;
+        background: #fff3cd;
+      }
+
+      .content {
+        width: 400px;
+      }
+
+      .label {
+        font-weight: bold;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="../index.html" class="back-btn">⬅ Назад</a>
+      <h1>Overflow</h1>
+      <p>Керування переповненням елементів</p>
+    </header>
+
+    <div class="container">
+      <!-- ОПИС -->
+      <div class="card">
+        <h2>📖 Що таке overflow?</h2>
+        <p>
+          Властивість <b>overflow</b> визначає, що відбувається з контентом,
+          який не поміщається в межах елемента.
+        </p>
+      </div>
+
+      <!-- DEMO -->
+      <div class="card">
+        <h2>🧪 Приклади</h2>
+
+        <div class="demo">
+          <div class="label">visible (за замовчуванням)</div>
+          <div class="box visible">
+            <div class="content">
+              Контент виходить за межі контейнера і залишається видимим.
+            </div>
+          </div>
+
+          <div class="label">hidden (обрізає)</div>
+          <div class="box hidden">
+            <div class="content">
+              Частина тексту просто обрізається і не відображається.
+            </div>
+          </div>
+
+          <div class="label">scroll (завжди скрол)</div>
+          <div class="box scroll">
+            <div class="content">
+              Тут завжди є смуга прокрутки, навіть якщо вона не потрібна.
+            </div>
+          </div>
+
+          <div class="label">auto (розумний скрол)</div>
+          <div class="box auto">
+            <div class="content">
+              Скрол з’являється тільки тоді, коли контент не вміщується.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ВИСНОВОК -->
+      <div class="card">
+        <h2>📊 Висновок</h2>
+        <p>
+          Overflow дозволяє контролювати поведінку контенту при переповненні.
+          Найчастіше використовують <b>auto</b>, оскільки він додає прокрутку
+          тільки за потреби.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

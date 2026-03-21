@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Position Masterclass</title>
+
+    <style>
+      :root {
+        --primary: #667eea;
+        --secondary: black;
+        --static-clr: #6c757d;
+        --relative-clr: #007bff;
+        --absolute-clr: #28a745;
+        --fixed-clr: #dc3545;
+        --sticky-clr: #fd7e14;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #f0f2f5;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      header {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: white;
+        padding: 40px 20px;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .back-btn {
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        text-decoration: none;
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        backdrop-filter: blur(5px);
+        transition: 0.3s;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .back-btn:hover {
+        background: white;
+        color: var(--secondary);
+      }
+
+      .container {
+        max-width: 900px;
+        margin: -30px auto 50px;
+        padding: 0 20px;
+      }
+
+      .card {
+        background: white;
+        padding: 25px;
+        margin-bottom: 25px;
+        border-radius: 16px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      }
+
+      h2 {
+        color: var(--secondary);
+        margin-top: 0;
+      }
+
+      /* Демо-майданчик */
+      .demo-section {
+        position: relative; /* Важливо для absolute всередині */
+        border: 2px solid #eef0f2;
+        background: #fff;
+        border-radius: 12px;
+        padding: 20px;
+        overflow: hidden; /* Щоб нічого не вилазило за межі карти */
+      }
+
+      .box {
+        width: 120px;
+        height: 50px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+        font-weight: bold;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-bottom: 15px;
+      }
+
+      code {
+        background: #eee;
+        padding: 2px 5px;
+        border-radius: 4px;
+        font-family: monospace;
+      }
+
+      /* Класи позиціонування */
+      .static {
+        background: var(--static-clr);
+        position: static;
+      }
+
+      .relative {
+        background: var(--relative-clr);
+        position: relative;
+        top: 15px;
+        left: 25px;
+      }
+
+      .absolute-container {
+        position: relative; /* Обмежувач для Absolute */
+        height: 120px;
+        background: #fdfdfd;
+        border: 1px dashed #ccc;
+        margin: 20px 0;
+      }
+      .absolute {
+        background: var(--absolute-clr);
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        margin: 0;
+      }
+
+      .fixed {
+        background: var(--fixed-clr);
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        font-size: 12px;
+        text-align: center;
+      }
+
+      .sticky-viewport {
+        height: 200px;
+        overflow-y: scroll;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        background: white;
+      }
+      .sticky-header {
+        background: var(--sticky-clr);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        padding: 10px;
+        color: white;
+        font-weight: bold;
+      }
+
+      .spacer {
+        height: 400px;
+        padding: 20px;
+        background: linear-gradient(#fff, #eee);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="../index.html" class="back-btn">⬅ Назад</a>
+      <h1>Робота з Position</h1>
+      <p>Інтерактивний довідник з CSS позиціонування</p>
+    </header>
+
+    <div class="container">
+      <div class="card">
+        <h2>📖 Основи</h2>
+        <p>
+          Властивість <code>position</code> визначає систему координат для
+          елемента.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>🧪 Практична демонстрація</h2>
+
+        <div class="label"><b>Static:</b> Звичайний порядок у документі.</div>
+        <div class="box static">Static</div>
+
+        <div class="label">
+          <b>Relative:</b> Рухається відносно свого початкового місця, але
+          зберігає простір за собою.
+        </div>
+        <div class="box relative">Relative (top:15, left:25)</div>
+
+        <div class="label">
+          <b>Absolute:</b> Виривається з потоку. Позиціонується відносно
+          найближчого батька з position не-static.
+        </div>
+        <div class="absolute-container">
+          <div class="box absolute">Absolute</div>
+          <small style="color: #999; padding: 10px; display: block"
+            >Батьківський блок (relative)</small
+          >
+        </div>
+
+        <div class="label">
+          <b>Sticky:</b> Гібрид relative та fixed. Залишається у видимій зоні
+          контейнера при скролі.
+        </div>
+        <div class="sticky-viewport">
+          <div class="sticky-header">Sticky Header</div>
+          <div class="spacer">
+            Скрольте мене вниз! <br>
+            ↓ <br>
+            ↓ <br>
+            Header залишиться зверху.
+          </div>
+        </div>
+      </div>
+
+      <div class="box fixed">Fixed (я тут завжди)</div>
+
+      <div class="card">
+        <h2>📊 Коротко про головне</h2>
+        <table style="width: 100%; border-collapse: collapse">
+          <tr style="text-align: left; border-bottom: 1px solid #eee">
+            <th style="padding: 10px">Тип</th>
+            <th style="padding: 10px">Відносно чого?</th>
+          </tr>
+          <tr>
+            <td style="padding: 10px"><b>Static</b></td>
+            <td>Потоку документа</td>
+          </tr>
+          <tr>
+            <td style="padding: 10px"><b>Relative</b></td>
+            <td>Самого себе</td>
+          </tr>
+          <tr>
+            <td style="padding: 10px"><b>Absolute</b></td>
+            <td>Батька (relative/absolute)</td>
+          </tr>
+          <tr>
+            <td style="padding: 10px"><b>Fixed</b></td>
+            <td>Вікна браузера (Viewport)</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
