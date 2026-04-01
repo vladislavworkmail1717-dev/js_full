@@ -1,64 +1,217 @@
-html,
+:root {
+  --color-background: #eeeff1;
+  --color-text: #000000;
+  --font-base: "Roboto", sans-serif;
+}
 body {
-  height: 100%;
+  font-family: var(--font-base);
+  font-style: normal;
+  line-height: 164%;
+  font-variation-settings: "wdth" 100;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-weight: 500;
+  box-sizing: border-box;
+}
+.container {
+  padding: 0 max(20px, calc(50vw - 555px));
+}
+/* варіанти вирівнювання по центру
+.container {
+    max-width: 1110px; 
+    margin: 0 auto;    
+}
+.container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    height: 100vh;           
+}
+
+.container {
+    display: grid;
+    place-items: center;
+    height: 200px;
+}
+.text-block {
+    text-align: center;
+} */
+
+.header {
+  padding-top: 80px;
+  padding-bottom: 20px;
+}
+
+.header__menu {
+  padding: 0px;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 20px 50px;
+  flex-wrap: wrap;
+}
+
+.header__link {
+  font-size: 16px;
+  letter-spacing: 10%;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000000;
+}
+.header__link-active {
+  text-decoration: none;
+  color: #34547a;
+}
+.header__link:hover,
+.header__link:focus {
+  text-decoration: none;
+  color: #34547a;
+}
+
+.promo {
+  max-width: 540px;
+  margin-top: 140px;
+  margin-bottom: 140px;
+}
+.promo__title {
+  font-size: 48px;
+  letter-spacing: 0%;
+}
+.promo__description {
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0%;
+  color: #272727;
+  margin-bottom: 65px;
+}
+.promo__button {
+  width: 225px;
+  height: 65px;
+  padding: 25px 40px;
+  background-color: #34547a;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+.promo__button:hover,
+.promo__button:focus {
+  opacity: 0.8;
+}
+
+.about {
+  padding-top: 110px;
+  padding-bottom: 80px;
+  background: #f9f9f9;
+}
+.section__title {
+  font-size: 32px;
+  letter-spacing: 0%;
+  text-align: center;
+}
+.section__description {
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #272727;
+  max-width: 540px;
+  margin: 0 auto;
+}
+.section__description:not(:last-child) {
+  margin-bottom: 50px;
+}
+
+.projects {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background: #34547a;
+}
+.projects__item {
+  display: grid;
+  grid-template-columns: 50px auto;
+  grid-template-rows: min-content min-content;
+  gap: 10px 20px;
+  align-items: center;
+  line-height: 1;
+  color: #fff;
+}
+.project__image {
+  grid-row: span 2;
+}
+.project__number {
+  font-size: 21px;
+  font-weight: 500;
+  margin: 0;
+}
+.project__desription {
+  font-size: 16px;
+  font-weight: 400;
   margin: 0;
 }
 
-.table_container {
-  width: 50%;
-  height: 600px;
-  margin: auto;
+.how-work {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background: #eeeff1;
 }
 
-table {
+.video {
+  position: relative;
+}
+
+.video::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  table-layout: auto;
+  background: rgba(0, 0, 0, 0.65);
+}
+.video__player {
+  width: 100%;
+  display: block;
+}
+.video__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  border: 0;
+  background: none;
+  width: 100px;
+  height: 100px;
+  z-index: 2;
+}
+.video__play:hover,
+.video__play:focus {
+  opacity: 0.8;
 }
 
-table,
-th,
-td {
-  border: 7px solid black;
-  border-collapse: collapse;
+.footer {
+  background-color: #34547a;
+  color: #fff;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
-.yellow {
-  background-color: yellow;
+.footer__name {
+  font-weight: 500;
+  font-size: 21px;
+  margin-bottom: 20px;
+  margin: 0 0 20px;
+  line-height: 1;
 }
 
-.red {
-  background-color: red;
-}
-
-.black {
-  background-color: black;
-}
-
-.blue {
-  background-color: blue;
-}
-
-.width_28 {
-  width: 28%;
-}
-
-.width_45 {
-  width: 45%;
-}
-
-.width_50 {
-  width: 50%;
-}
-
-.width_10 {
-  width: 10%;
-}
-
-.height_13 {
-  height: 13%;
-}
-
-.height_25 {
-  height: 25%;
+.footer__copy {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 164%;
+  margin: 0;
 }
