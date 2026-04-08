@@ -1,0 +1,50 @@
+.container {
+  width: 95%;
+  margin: 20px;
+  border: 1px solid black;
+  padding: 10px;
+  background: rgb(236, 235, 235);
+}
+
+.block {
+  width: 220px;
+  height: 80px;
+  background: silver;
+  border: 1px solid black;
+  margin: 10px;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.big {
+  height: 175px;
+}
+
+.small-group {
+  float: right;
+}
+
+
+.center-group {
+  width: 500px;
+  margin: auto;
+}
+
+.center-group .big {
+  float: left;
+}
+
+.center-group .small-group {
+  float: left;
+}
+
+
+.clear {
+  clear: both;
+}

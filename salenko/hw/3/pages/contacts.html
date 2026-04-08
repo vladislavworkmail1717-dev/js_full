@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stone and Bead – Форма замовлення</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+
+  <body class="page">
+    <header class="header">
+      <div class="container header__inner">
+        <div class="header__top">
+          <a
+            class="brand"
+            href="../index.html"
+            aria-label="Stone and Bead — головна сторінка"
+          >
+            <img
+              class="brand__logo"
+              src="../img/StoneAndBead.webp"
+              alt="Stone and Bead logo"
+            />
+            <span class="brand__name">Stone and Bead</span>
+          </a>
+          <p class="brand__subtitle">Браслети з натурального каміння</p>
+        </div>
+
+        <nav class="tabs" aria-label="Навігація по сайту">
+          <ul class="tabs__list">
+            <li class="tabs__item">
+              <a class="tabs__link" href="../index.html">Головна</a>
+            </li>
+            <li class="tabs__item">
+              <a class="tabs__link" href="articles.html">Каталог</a>
+            </li>
+            <li class="tabs__item">
+              <a class="tabs__link" href="gallery.html">Галерея</a>
+            </li>
+            <li class="tabs__item">
+              <a class="tabs__link tabs__link--active" href="contacts.html"
+                >Форма замовлення</a
+              >
+            </li>
+            <li class="tabs__item">
+              <a class="tabs__link" href="about.html">Про нас</a>
+            </li>
+            <li class="tabs__item">
+              <a class="tabs__link" href="anchors.html">Якорі</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        <section class="section">
+          <h1 class="section__title">Форма замовлення</h1>
+          <p class="text">
+            Заповніть дані — і ми зв’яжемося з вами для підтвердження.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2 class="section__title">Заповнення форми</h2>
+
+          <form class="form" action="#" method="post">
+            <fieldset class="form__fieldset">
+              <legend class="form__legend">Ваші дані</legend>
+
+              <div class="form__grid">
+                <label class="form__field">
+                  <span class="form__label">ПІБ:</span>
+                  <input
+                    class="form__input"
+                    id="name"
+                    type="text"
+                    name="name"
+                    required
+                  />
+                </label>
+
+                <label class="form__field">
+                  <span class="form__label">Електронна пошта:</span>
+                  <input
+                    class="form__input"
+                    id="email"
+                    type="email"
+                    name="email"
+                    placeholder="example@example.com"
+                    required
+                  />
+                </label>
+
+                <label class="form__field">
+                  <span class="form__label">Телефон:</span>
+                  <input
+                    class="form__input"
+                    id="phone"
+                    type="tel"
+                    name="phone"
+                    placeholder="+380..."
+                    required
+                  />
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset class="form__fieldset">
+              <legend class="form__legend">Оберіть тип браслета</legend>
+              <div class="form__options">
+                <label class="option"
+                  ><input
+                    class="option__input"
+                    type="radio"
+                    name="type"
+                    value="men"
+                  />
+                  <span class="option__text">Чоловічий</span></label
+                >
+                <label class="option"
+                  ><input
+                    class="option__input"
+                    type="radio"
+                    name="type"
+                    value="women"
+                  />
+                  <span class="option__text">Жіночий</span></label
+                >
+                <label class="option"
+                  ><input
+                    class="option__input"
+                    type="radio"
+                    name="type"
+                    value="classic"
+                    checked
+                  />
+                  <span class="option__text">Класичний</span></label
+                >
+                <label class="option"
+                  ><input
+                    class="option__input"
+                    type="radio"
+                    name="type"
+                    value="gift"
+                  />
+                  <span class="option__text">Подарунковий</span></label
+                >
+              </div>
+            </fieldset>
+
+            <fieldset class="form__fieldset">
+              <legend class="form__legend">Розмір</legend>
+              <label class="form__field">
+                <span class="form__label">Оберіть розмір:</span>
+                <select class="form__select" id="size" name="size" required>
+                  <option value="">— Оберіть —</option>
+                  <option value="s">S (16–17 см)</option>
+                  <option value="m">M (18–19 см)</option>
+                  <option value="l">L (20–21 см)</option>
+                </select>
+              </label>
+            </fieldset>
+
+            <fieldset class="form__fieldset">
+              <legend class="form__legend">Додатково</legend>
+              <div class="form__options">
+                <label class="option"
+                  ><input
+                    class="option__input"
+                    type="checkbox"
+                    name="options"
+                    value="giftbox"
+                  />
+                  <span class="option__text">Подарункова коробка</span></label
+                >
+                <label class="option"
+                  ><input
+                    class="option__input"
+                    type="checkbox"
+                    name="options"
+                    value="pair"
+                  />
+                  <span class="option__text">Парні браслети</span></label
+                >
+                <label class="option"
+                  ><input
+                    class="option__input"
+                    type="checkbox"
+                    name="options"
+                    value="fast"
+                  />
+                  <span class="option__text"
+                    >Термінове виготовлення</span
+                  ></label
+                >
+              </div>
+            </fieldset>
+
+            <fieldset class="form__fieldset">
+              <legend class="form__legend">Коментар до замовлення</legend>
+              <label class="form__field">
+                <span class="form__label">Напишіть побажання:</span>
+                <textarea
+                  class="form__textarea"
+                  id="comment"
+                  name="comment"
+                  rows="4"
+                  placeholder="текст для заповнення"
+                ></textarea>
+              </label>
+            </fieldset>
+
+            <div class="form__actions">
+              <button class="btn" type="submit">Надіслати</button>
+              <button class="btn btn--ghost" type="reset">Очистити</button>
+            </div>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p class="footer__text">© Stone and Bead</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+.table_container {
+  width: 600px;
+  margin: 40px auto;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  height: 600px;
+}
+
+/* Клітинки */
+td {
+  border: 8px solid black;
+  padding: 0;
+}
+
+/* ВИСОТА */
+.height_13 td {
+  height: 13%;
+}
+
+.height_25 td {
+  height: 25%;
+}
+
+/* ШИРИНА */
+.width_5 {
+  width: 5%;
+}
+
+.width_10 {
+  width: 10%;
+}
+
+.width_28 {
+  width: 28%;
+}
+
+.width_45 {
+  width: 45%;
+}
+
+.width_50 {
+  width: 50%;
+}
+
+/* Кольор */
+.red {
+  background: red;
+}
+
+.blue {
+  background: blue;
+}
+
+.yellow {
+  background: yellow;
+}
+
+.black {
+  background: black;
+}
+
+.white {
+  background: white;
+}

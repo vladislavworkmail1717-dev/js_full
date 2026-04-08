@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Селектор по тегу</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Селектори CSS</h1>
+    <h2>Селектор по тегу</h2>
+
+    <ul>
+      <li>Селектор: li. Тип: по тегу. Вага: 0,0,0,1.</li>
+    </ul>
+
+    <h2>Селектор по класу</h2>
+
+    <p class="textred">Селектор: .textred. Тип: по класу. Вага: 0,0,1,0</p>
+
+    <h2>Селектор по id</h2>
+
+    <p id="by-id">Селектор: #by-id. Тип: по id. Вага: 0,1,0,0.</p>
+
+    <h2>Селектор по атрибуту</h2>
+
+    <input type="text" placeholder="input Тип: по атрибуту." />
+    <input type="email" placeholder="Вага: 0,0,1,1." />
+
+    <h2>Вкладенні селектори</h2>
+    <div>
+      <p>Селектор: div p. Тип: вкладений. Вага: 0,0,0,2.</p>
+    </div>
+
+    <h2>Дочірні селектори</h2>
+    <section>
+      <h3>Cелектор: section > p.</h3>
+      <p>Тип: дочірній. Вага: 0,0,0,2.</p>
+    </section>
+
+    <h2>Послідовність селекторів</h2>
+    <p class="highlight">
+      Селектор: p.highlight. Тип: послідовність. Вага: 0,0,1,1.
+    </p>
+
+    <h2>Комбінації селекторів</h2>
+    <nav id="menu">
+      <a class="nav-link"
+        >Селектор: #menu .nav-link. Тип: комбінація. Вага: 0,1,1,0</a
+      >
+    </nav>
+
+    <div id="wrapper">
+      <span class="inner">
+        Селектор: #wrapper span.inner. Тип: комбінація. Вага: 0,1,1,1.
+      </span>
+    </div>
+    <h2>Вбудований стиль</h2>
+
+    <div id="box" style="color: rgb(17, 182, 108)">
+      Селектор: inline style. Тип: вбудований стиль. Вага: 1,0,0,0.
+    </div>
+  </body>
+</html>

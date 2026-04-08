@@ -1,0 +1,41 @@
+/*Селектори по тегу li*/
+li {
+  color: rgb(244, 114, 21);
+}
+
+/*Селектор по класу .by-class*/
+.textred {
+  color: rgb(164, 15, 15);
+}
+/*Селектор по id #by-id id має унікальне значення - не може повторюватись на сторінці */
+#by-id {
+  color: rgb(114, 90, 44);
+}
+/* Селектор по атрибуту */
+input[type="text"] {
+  box-shadow: 0 0 10px 3px rgb(149, 65, 65); /* Не працює у Safari macOS без appearance: none; */
+} 
+input[type="email"]{
+  appearance: none; /* Для Safari macOS */
+  box-shadow: 0 0 5px 2px rgb(47, 47, 185);
+}
+/* Селектор по вкладеності */
+div p {
+  color: rgb(146, 49, 146);
+}
+/* Селектор по дочірності */
+section > p {
+  color: rgb(13, 101, 13);
+}
+/* Селектор по послідовності */
+p.highlight {
+  color: rgb(212, 34, 212);
+  /* Комбінація селекторів */
+}
+#menu .nav-link {
+  color: rgb(199, 123, 123);
+}
+
+#wrapper span.inner {
+  color: rgb(22, 163, 163);
+}

@@ -1,0 +1,66 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f7fa;
+  color: #333;
+  margin: 0;
+  padding: 40px;
+}
+
+/* Заголовок */
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #2c3e50;
+}
+
+/* Таблица */
+table {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Ячейки */
+th, td {
+  padding: 15px;
+  text-align: center;
+}
+
+/* Заголовки */
+th {
+  background: #eef1f5;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+/* Строки */
+tr {
+  border-bottom: 1px solid #eee;
+}
+
+tr:hover {
+  background: #f9fafb;
+}
+
+/* Кнопки */
+.btn {
+  display: inline-block;
+  margin: 3px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 1px solid #d0d7de;
+  color: #2c3e50;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: #e3e8ee;
+}
+
