@@ -1,0 +1,80 @@
+@use "./utility" as *;
+
+.video {
+  width: 100%;
+  height: auto;
+  padding-bottom: clamp(50px, 5.2vw, 100px);
+  background-color: $primary-color;
+
+  #{&}__text-title {
+    @include font-styling(
+      $secondary-font-weight,
+      f32,
+      $secondary-line-height,
+      $primary-letter-spacing,
+      $black-text-color
+    );
+    text-align: center;
+    padding-top: clamp(50px, 5.2vw, 100px);
+    margin: 0 auto clamp(30px, 2.6vw, 50px) auto;
+  }
+
+  #{&}__text {
+    @include font-styling(
+      $primary-font-weight,
+      f16,
+      $primary-line-height,
+      $primary-letter-spacing,
+      $primary-text-color
+    );
+    text-align: center;
+    width: 540px;
+    margin: auto;
+  }
+
+  @include mobile {
+    #{&}__text {
+      width: 330px;
+    }
+  }
+
+  #{&}__player-container {
+    position: relative;
+    display: block;
+    width: clamp(370px, 57.8vw, 1110px);
+    height: auto;
+    margin: clamp(29px, 3vw, 57px) auto 0 auto;
+  }
+
+  #{&}__player {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  #{&}__player-container::after {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.65);
+    width: 100%;
+    height: 100%;
+    display: block;
+    top: 0;
+    left: 0;
+    position: absolute;
+  }
+
+  #{&}__play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    background: none;
+    border: none;
+    transform: translate(-50%, -50%);
+  }
+
+  #{&}__play-button img {
+    width: clamp(50px, 5.1vw, 100px);
+    height: clamp(50px, 5.1vw, 100px);
+  }
+}

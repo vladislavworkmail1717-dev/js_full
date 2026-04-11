@@ -1,0 +1,31 @@
+@use "./utility" as *;
+
+.footer {
+  width: 100%;
+  height: auto;
+  background-color: $secondary-color;
+
+  #{&}__title {
+    @include font-styling(
+      $secondary-font-weight,
+      f21,
+      $secondary-line-height,
+      $primary-letter-spacing,
+      $white-text-color
+    );
+    margin: 0;
+    padding-top: clamp(30px, 2.6vw, 50px);
+  }
+
+  #{&}__text {
+    @include font-styling(
+      $primary-font-weight,
+      f13,
+      $primary-line-height,
+      $primary-letter-spacing,
+      $white-text-color
+    );
+    margin: clamp(10px, 1vw, 20px) 0 0;
+    padding-bottom: clamp(30px, 2.6vw, 50px);
+  }
+}

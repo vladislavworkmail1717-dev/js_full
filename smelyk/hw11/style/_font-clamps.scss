@@ -1,0 +1,8 @@
+$font-clamps: (
+  "f13": clamp(10px, 0.7vw, 13px),
+  "f16": clamp(14px, 0.8vw, 16px),
+  "f16-min-10": clamp(10px, 0.8vw, 16px),
+  "f21": clamp(15px, 1vw, 21px),
+  "f32": clamp(18px, 1.6vw, 32px),
+  "f48": clamp(20px, 2.5vw, 48px),
+);
