@@ -1,0 +1,18 @@
+.animated-shape:hover {
+  animation: colorShift 1s infinite alternate ease-in-out;
+}
+
+@keyframes colorShift {
+  0% {
+    fill: #3498db;    
+    stroke: #2c3e50;  
+  }
+  50% {
+    fill: #e74c3c;    
+    stroke: #9b59b6;  
+  }
+  100% {
+    fill: #f1c40f;    
+    stroke: #e67e22;  
+  }
+}

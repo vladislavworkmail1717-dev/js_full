@@ -1,0 +1,38 @@
+@use './utility' as *;
+
+.about {
+  width: 100%;
+  height: auto;
+  margin-top: clamp(50px, 5.8vw, 112px);
+
+  #{&}__title {
+    @include font-styling(
+      $secondary-font-weight,
+      f32,
+      $secondary-line-height,
+      $primary-letter-spacing,
+      $black-text-color
+    );
+    text-align: center;
+  }
+
+  #{&}__text {
+    width: 540px;
+    height: 67px;
+    @include font-styling(
+      $primary-font-weight,
+      f16,
+      $primary-line-height,
+      $primary-letter-spacing,
+      $primary-text-color
+    );
+    text-align: center;
+    margin: clamp(30px, 2.6vw, 50px) auto clamp(50px, 5.1vw, 100px);
+  }
+
+  @include mobile {
+    #{&}__text {
+      width: 330px;
+    }
+  }
+}
