@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Адаптивний проект Bootstrap 5</title>
+
+    <!-- Подключение Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <!-- Подключение Bootstrap 5 JS (включает Popper.js) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- 3. HEADER з дворівневим меню -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+        <div class="container">
+          <a class="navbar-brand fw-bold text-warning" href="#">PROJECT_ST</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainMenu"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mainMenu">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Головна</a>
+              </li>
+              <!-- Дворівневе меню -->
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="dropServices"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                >
+                  Послуги
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="#">Веб-дизайн</a></li>
+                  <li><a class="dropdown-item" href="#">Розробка</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li><a class="dropdown-item" href="#">Маркетинг</a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="#">Про нас</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Контакти</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- 1 & 2. Адаптивна сітка (MAIN ширша) -->
+    <main class="container my-5">
+      <div class="row g-4">
+        <!-- 4. LEFT: Слайдер (4 зображення) -->
+        <aside class="col-12 col-md-6 col-lg-3 order-2 order-lg-1">
+          <div class="card card-custom p-2 h-100">
+            <h5 class="p-2 border-bottom">Галерея</h5>
+            <div id="leftSlider" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner rounded">
+                <div class="carousel-item active">
+                  <img src="./images/foto1.jpg" class="d-block" alt="Image 1" />
+                </div>
+                <div class="carousel-item">
+                  <img src="./images/foto2.jpg" class="d-block" alt="Image 2" />
+                </div>
+                <div class="carousel-item">
+                  <img src="./images/foto3.jpg" class="d-block" alt="Image 3" />
+                </div>
+                <div class="carousel-item">
+                  <img src="./images/foto4.jpg" class="d-block" alt="Image 4" />
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#leftSlider"
+                data-bs-slide="prev"
+              >
+                <span class="carousel-control-prev-icon"></span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#leftSlider"
+                data-bs-slide="next"
+              >
+                <span class="carousel-control-next-icon"></span>
+              </button>
+            </div>
+          </div>
+        </aside>
+
+        <!-- 5. MAIN: Акордеон -->
+        <section class="col-12 col-lg-6 order-1 order-lg-2">
+          <div class="card card-custom p-4 h-100">
+            <h2 class="mb-4">Основний контент</h2>
+            <div class="accordion" id="mainAccordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#acc1"
+                  >
+                    Інформація про проект
+                  </button>
+                </h2>
+                <div
+                  id="acc1"
+                  class="accordion-collapse collapse show"
+                  data-bs-parent="#mainAccordion"
+                >
+                  <div class="accordion-body">
+                    Це адаптивна сітка Bootstrap. На великих екранах тут 3
+                    колонки, на планшетах — 2, на телефонах — 1.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#acc2"
+                  >
+                    Наші переваги
+                  </button>
+                </h2>
+                <div
+                  id="acc2"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#mainAccordion"
+                >
+                  <div class="accordion-body">
+                    Використання сучасних компонентів дозволяє створювати швидкі
+                    та зручні інтерфейси.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6. RIGHT: Форма (мінімум 5 полів) -->
+        <aside class="col-12 col-md-6 col-lg-3 order-3">
+          <div class="card card-custom p-3 h-100">
+            <h5 class="mb-3 border-bottom pb-2">Зв'яжіться з нами</h5>
+            <form>
+              <!-- Поле 1: Ім'я -->
+              <div class="mb-2">
+                <label class="form-label small">Ваше ім'я</label>
+                <input
+                  type="text"
+                  class="form-control form-control-sm"
+                  required
+                />
+              </div>
+              <!-- Поле 2: Email -->
+              <div class="mb-2">
+                <label class="form-label small">Email адреса</label>
+                <input
+                  type="email"
+                  class="form-control form-control-sm"
+                  placeholder="name@example.com"
+                  required
+                />
+              </div>
+              <!-- Поле 3: Вибір теми -->
+              <div class="mb-2">
+                <label class="form-label small">Тема звернення</label>
+                <select class="form-select form-select-sm">
+                  <option selected>Загальне питання</option>
+                  <option>Техпідтримка</option>
+                  <option>Скарга</option>
+                </select>
+              </div>
+              <!-- Поле 4: Повідомлення -->
+              <div class="mb-2">
+                <label class="form-label small">Повідомлення</label>
+                <textarea
+                  class="form-control form-control-sm"
+                  rows="3"
+                ></textarea>
+              </div>
+              <!-- Поле 5: Чекбокс -->
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="terms" />
+                <label class="form-check-label small" for="terms"
+                  >Я згоден з обробкою даних</label
+                >
+              </div>
+              <!-- Кнопка -->
+              <button
+                type="submit"
+                class="btn btn-warning btn-sm w-100 fw-bold"
+              >
+                Надіслати форму
+              </button>
+            </form>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <!-- 7. FOOTER -->
+    <footer class="bg-dark text-white py-4 border-top border-secondary">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <h6>Про нас</h6>
+            <p class="small text-secondary">
+              Ми створюємо найкращі рішення для вашого бізнесу на базі
+              Bootstrap.
+            </p>
+          </div>
+          <div class="col-md-4 mb-3">
+            <h6>Контакти</h6>
+            <p class="small text-secondary">
+              Email: info@example.com<br />Тел: +38 (000) 000-00-00
+            </p>
+          </div>
+          <div class="col-md-4 mb-3">
+            <h6>Соціальні мережі</h6>
+            <div class="d-flex justify-content-center gap-2">
+              <a href="#" class="text-warning text-decoration-none">Facebook</a>
+              <a href="#" class="text-warning text-decoration-none"
+                >Instagram</a
+              >
+            </div>
+          </div>
+        </div>
+        <hr class="bg-secondary" />
+        <p class="mb-0 small text-secondary">
+          &copy; 2024 Всі права захищені. My Adaptive Page.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap 5.3 JS Bundle (includes Popper) -->
+    <script src="https://jsdelivr.net"></script>
+  </body>
+</html>

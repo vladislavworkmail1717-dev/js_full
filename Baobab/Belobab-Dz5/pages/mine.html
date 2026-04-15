@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minecraft</title>
+  <link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+
+<body>
+  <form>
+    <fieldset>
+      <legend>Контактна інформація</legend>
+      <label for="name">Ім'я:</label>
+      <input type="text" id="user-name" name="name" />
+
+      <label for="email">Електронна пошта:</label>
+      <input type="email" id="email" name="email" />
+      <button type="submit" onclick="alert('Сповіщення прийде вам на пошту')">
+        Реєстрація
+      </button>
+    </fieldset>
+  </form>
+  <div style="
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 30px;
+      ">
+    <div style="flex: 0 0 auto">
+      <div style="display: flex; align-items: center; gap: 20px">
+        <div style="text-align: left">
+          <h1 style="margin: 0">Шахтар</h1>
+          <div style="margin-top: 5px">
+            <h2 class="skills" style="margin: 0">Сила 5/5</h2>
+            <h2 class="skills" style="margin: 0">Інтелект 2/5</h2>
+          </div>
+        </div>
+        <img src="../images/Foto2.webp" alt="Шахтар" style="
+              width: 150px;
+              height: 150px;
+              border-radius: 10px;
+              object-fit: cover;
+            " />
+      </div>
+
+      <form style="
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+          ">
+        <fieldset>
+          <label for="name">Ім'я:</label>
+          <input placeholder="Ім'я" type="text" id="name" name="name" required />
+
+          <label for="number">Номер телефона:</label>
+          <input placeholder="Номер телефона" type="number" id="number" name="number" required />
+
+          <div style="margin-top: 5px">
+            <label for="time">Зайнятість</label>
+            <select id="time" name="time" style="width: 100%">
+              <option value="normal">8 годин</option>
+              <option value="hard">12 годин</option>
+              <option value="full">Буду жити на роботі</option>
+            </select>
+          </div>
+
+          <button style="margin-top: 10px" type="submit" onclick="alert('Заявку прийнято, вам зателефонують')">
+            Залишити заявку
+          </button>
+        </fieldset>
+      </form>
+    </div>
+
+    <div style="flex: 1; text-align: right">
+      <iframe style="margin-top: 20px; border: 1px solid gray" width="560" height="315" src="../index.html"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+</body>
+
+</html>

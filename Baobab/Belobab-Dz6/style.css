@@ -1,0 +1,65 @@
+/* Общие стили таблицы */
+.main-table {
+  width: 700px;
+  height: 700px;
+  /* Встановлюємо загальну рамку 3px */
+  border: 3px solid black;
+  /* Схлопуємо кордони, щоб вони не двоїлися */
+  border-collapse: collapse;
+}
+
+/* Стилі для кожного осередку */
+.main-table td {
+  /* Рамка 8px для кожного осередку */
+  border: 8px solid black;
+  text-align: center;
+}
+
+/* Стилі рядків */
+.row-1 {
+  height: 80px;
+}
+.row-2 {
+  height: 150px;
+}
+.row-6 {
+  height: 50px;
+}
+
+/* Допоміжні класи розмірів */
+.w-80 {
+  width: 80px;
+}
+.w-30 {
+  width: 30px;
+}
+.h-70 {
+  height: 70px;
+}
+.h-65 {
+  height: 65px;
+}
+.h-25 {
+  height: 25px;
+}
+
+.cell-fixed {
+  width: 100px;
+  height: 150px;
+}
+
+/* Кольори */
+.bg-yellow {
+  background-color: yellow;
+}
+.bg-red {
+  background-color: red;
+}
+.bg-black {
+  background-color: black;
+  color: white;
+}
+.bg-blue {
+  background-color: blue;
+  color: white;
+}

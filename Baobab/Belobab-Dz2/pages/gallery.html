@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kripto</title>
+  </head>
+
+  <body>
+    <form>
+      <fieldset>
+        <legend>Контактна інформація</legend>
+        <label for="name">Ім'я:</label>
+        <input type="text" id="user-name" name="name" />
+
+        <label for="email">Електронна пошта:</label>
+        <input type="email" id="email" name="email" />
+        <button type="submit" onclick="alert('Сповіщення прийде вам на пошту')">
+          Реєстрація
+        </button>
+      </fieldset>
+    </form>
+    <div style="display: flex; align-items: center; gap: 20px">
+      <div style="text-align: left">
+        <h1 style="margin: 0">Брокер</h1>
+        <div style="margin-top: 5px">
+          <h2 style="margin: 0">Сила 1/5</h2>
+          <h2 style="margin: 0">Інтелект 5/5</h2>
+        </div>
+      </div>
+      <img
+        src="../images/Foto5.jpg"
+        alt="Брокер"
+        style="
+          width: 150px;
+          height: 150px;
+          border-radius: 10px;
+          object-fit: cover;
+        "
+      />
+    </div>
+    <form
+      onsubmit="
+        alert('Заявку прийнято, вам зателефонують');
+        return false;
+      "
+    >
+      <label for="name">Ім'я:</label>
+      <input type="text" id="name" name="name" />
+
+      <label for="number">Номер телефона:</label>
+      <input type="number" id="number" name="number" />
+
+      <div style="margin-top: 5px">
+        <label for="time">Зайнятість</label>
+        <select id="time" name="time">
+          <option value="normal">8годин</option>
+          <option value="hard">12годин</option>
+          <option value="full">Буду жити на роботі</option>
+        </select>
+      </div>
+      <button style="margin-top: 5px" type="submit">Залишити заявку</button>
+    </form>
+  </body>
+</html>

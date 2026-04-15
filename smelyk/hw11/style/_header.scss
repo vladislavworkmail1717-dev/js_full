@@ -1,0 +1,93 @@
+@use "./utility" as *;
+
+.header {
+  position: relative;
+  padding-top: clamp(30px, 4.2vw, 80px);
+  height: auto;
+  background-color: $primary-color;
+
+  #{&}__nav_menu {
+    width: 565px;
+    text-align: justify;
+    column-gap: clamp(30px, 2.5vw, 45px);
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @include mobile {
+    #{&}__nav_menu {
+      width: 330px;
+    }
+  }
+
+  #{&}__menu_item {
+    display: inline;
+    margin: 0;
+  }
+
+  #{&}__menu_link {
+    text-decoration: none;
+    @include font-styling(
+      $primary-font-weight,
+      f16,
+      -$primary-line-height,
+      $secondary-letter-spacing,
+      $black-text-color
+    );
+  }
+
+  #{&}__title {
+    width: 541px;
+    height: 45px;
+    @include font-styling(
+      $secondary-font-weight,
+      f48,
+      $primary-line-height,
+      $primary-letter-spacing,
+      $black-text-color
+    );
+    margin-top: clamp(30px, 8.3vw, 160px);
+  }
+
+  @include mobile {
+    #{&}__title {
+      width: 330px;
+    }
+  }
+
+  #{&}__text {
+    display: block;
+    width: 540px;
+    @include font-styling(
+      $primary-font-weight,
+      f16,
+      $primary-line-height,
+      $primary-letter-spacing,
+      $primary-text-color
+    );
+    margin-top: clamp(15px, 3.1vw, 60px);
+    padding-right: 10px;
+  }
+
+  @include mobile {
+    #{&}__text {
+      width: 330px;
+    }
+  }
+
+  #{&}__button {
+    width: clamp(120px, 11.8vw, 225px);
+    height: clamp(35px, 3.4vw, 65px);
+    @include font-styling(
+      $primary-font-weight,
+      f16-min-10,
+      $primary-line-height,
+      $secondary-letter-spacing,
+      $white-text-color
+    );
+    margin-top: clamp(43px, 3.4vw, 65px);
+    border: none;
+    background-color: $secondary-color;
+    margin-bottom: clamp(50px, 7.3vw, 140px);
+  }
+}

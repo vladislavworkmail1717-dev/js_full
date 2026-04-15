@@ -1,0 +1,69 @@
+/*line1.1*/
+body {
+  background-image: url("./images/Foto6.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* ДЗ4 */
+/* тег 1,0,0,1 перебиває останній тег */
+section {
+  background: red !important;
+  padding: 10px;
+}
+
+/* клас 0,1,0 */
+.box {
+  background-color: gold;
+}
+
+/* id 1,0,0 */
+#element1 {
+  background: gray;
+}
+
+/* атрибут 0,1,0 */
+[title] {
+  background: green;
+}
+
+/* вкладений 0,0,2 */
+div span {
+  background-color: greenyellow;
+  display: block;
+}
+
+/* дочірній 0,0,2 */
+main > p {
+  background: blue;
+}
+
+/* послідовність (клас клас) 0,2,0 */
+.container .text {
+  background-color: palevioletred;
+  display: inline-block;
+}
+
+/* комбінація (тег + id + клас + атрибут) 1,1,1 */
+header#top-head.header-main {
+  background: plum;
+}
+
+/* комбінація (клас + тег з класом) 0,1,2*/
+.wrap div.icon {
+  background-color: hotpink;
+  font-style: normal;
+}
+
+/* складна вкладеність 0,1,3*/
+footer .bot span.copyright {
+  background: chocolate;
+  padding: 5px;
+}
+
+/* тег 0,0,1 */
+section {
+  background: blue;
+  padding: 10px;
+}
