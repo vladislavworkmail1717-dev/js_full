@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body class="h-100 d-flex flex-column p-3">
+    <div class="container d-flex flex-column h-100">
+        <!-- header -->
+        <header>
+            <nav class="navbar navbar-expand-lg bg-body-tertiary pt-3 pb-3 mb-3">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Navbar</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="#">About us</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Projects
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item" href="https://github.com/kiro21-12/fullstack-hw-02" target="_blank">
+                                            Home work 02
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="https://github.com/kiro21-12/fullstack-hw-03" target="_blank">
+                                            Home work 03
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="https://github.com/kiro21-12/fullstack-hw-07" target="_blank">
+                                            Home work 04
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="https://github.com/kiro21-12/fullstack-hw-08" target="_blank">
+                                            Home work 05
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="https://github.com/kiro21-12/fullstack-hw-09" target="_blank">
+                                            Home work 06
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="https://github.com/kiro21-12/fullstack-hw-10" target="_blank">
+                                            Home work 07
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="https://github.com/kiro21-12/fullstack-hw-11" target="_blank">
+                                            Home work 08
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="https://github.com/kiro21-12/fullstack-hw-13" target="_blank">
+                                            Home work 09
+                                        </a>
+                                    </li>
+                                    </ul>  
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- wrap -->
+        <div class="row">
+            <!--main  -->
+            <main class="col col-lg-8 col-md-6 col-sm-12 col-12 order-lg-2 order-md-2 order-sm-1">
+                <h1 class="text-center">
+                        SVG shapes
+                </h1>
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Rectangle
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <pre>
+                                <code>
+                                    &lt;rect class="animated-shape" x="20" y="20" width="100" height="100" fill="skyblue" stroke="pink" stroke-width="5" /&gt;
+                                </code>
+                            </pre>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- item 2 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Circle
+                        </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <pre>
+                                    <code>
+                                        &lt;circle class="animated-shape" cx="380" cy="70" r="50" fill="coral" stroke="red" stroke-width="3" /&gt;
+                                    </code>
+                                </pre> 
+                            </div>
+                        </div>
+                    </div>
+                    <!-- item 3 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Ellipse
+                        </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <pre>
+                                <code>
+                                    &lt;ellipse class="animated-shape" cx="520" cy="70" rx="60" ry="40" fill="gold" stroke="black" stroke-width="10" /&gt;
+                                </code>
+                            </pre>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <!-- left -->
+            <aside class="col col-lg-2 col-md-3 col-sm-12 col-12 order-lg-1 order-md-1 order-sm-2">
+                <h2>
+                    Styling Variants
+                </h2>
+                <p>
+                    Beyond the geometry, you can alter the "look" using presentation attributes:
+                </p>
+                <!-- carousel -->
+                <div id="carouselExampleIndicators" class="carousel slide">
+                    <div class="carousel-inner row align-items-stretch">
+                        <!-- item 1 -->
+                        <div class="carousel-item active">
+                            <figure>
+                                <img src="./img/01.jpg" class="d-block w-100" alt="...">
+                                <figcaption>Fill: Changes the interior color, gradient, or pattern.</figcaption>
+                            </figure>
+                        </div>
+                        <!-- item 2 -->
+                        <div class="carousel-item">
+                            <figure>
+                                <img src="./img/02.jpg" class="d-block w-100" alt="...">
+                                <figcaption>
+                                    Stroke: Controls the outline's color, width, and dash patterns (e.g., stroke-dasharray for dashed lines).
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <!-- item 3 -->
+                        <div class="carousel-item">
+                            <figure>
+                                <img src="./img/03.jpg" class="d-block w-100" alt="...">
+                                <figcaption>
+                                    Caps and Joins: Attributes like stroke-linecap (round, square, butt) and stroke-linejoin (miter, round, bevel) change how corners and ends appear.
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <!-- end items -->
+                    </div>
+                    <button class="carousel-control-prev translate-middle-y" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon bg-primary" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next translate-middle-y" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                        <span class="carousel-control-next-icon bg-primary" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                    </div>
+            </aside>
+            <!-- right -->
+            <aside class="col col-lg-2 col-md-3 col-sm-12 col-12 order-lg-3 order-md-3 order-sm-3">
+                <form>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <div id="emailHelp" class="form-text">We'll never share your email and password with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </aside>
+        </div>
+        
+    </div>
+    <div class="container">
+        <!-- footer -->
+        <footer class="fixed-bottom bg-light text-center p-3"> &#169; copyright protect privacy - Kolkov Kyrylo</footer>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
