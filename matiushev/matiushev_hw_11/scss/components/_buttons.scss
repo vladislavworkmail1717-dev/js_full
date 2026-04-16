@@ -1,0 +1,18 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.btn {
+    @include flex-center;
+
+    width: 180px;
+    height: 55px;
+    background: $color-primary;
+    color: $color-white;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    transition: 0.3s;
+
+    &:hover {
+        opacity: 0.9;
+    }
+}
