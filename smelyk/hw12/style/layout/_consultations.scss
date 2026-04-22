@@ -1,0 +1,29 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.consultations {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  justify-content: center;
+  gap: 90px;
+  padding: 60px 0 37px;
+
+  &__item {
+    width: 100%;
+    text-align: center;
+  }
+
+  &__item-title {
+    @include m.font-style(
+      v.$font-text-secondary,
+      v.$color-primary,
+      v.$font-weight-bold,
+      v.$font-size-large,
+      32px
+    );
+  }
+
+  &__item-text {
+    @include m.font-style-regular(v.$color-text-primary);
+  }
+}

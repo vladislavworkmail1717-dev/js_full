@@ -1,0 +1,60 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.contacts {
+  position: relative;
+  width: 100%;
+
+  &__map {
+    iframe {
+      display: block;
+      width: 100%;
+
+      @media (max-width: 750px) {
+        height: 350px;
+      }
+    }
+  }
+
+  &__card {
+    position: absolute;
+    top: clamp(20px, 9vw, 130px);
+    left: clamp(150px, 57vw, 828px);
+    width: 477px;
+    height: 344px;
+    @media (max-width: 1120px) {
+      position: static;
+      margin: 20px auto 0 auto;
+    }
+
+    @media (max-width: 480px) {
+      width: 350px;
+    }
+    background-color: v.$color-secondary;
+  }
+
+  &__card-title {
+    @include m.font-style(
+      v.$font-text-secondary,
+      v.$color-primary,
+      v.$font-weight-bold,
+      v.$font-size-x-large,
+      v.$line-height-secondary
+    );
+    padding-left: 30px;
+    padding-top: 27px;
+    padding-bottom: 10px;
+    @media (max-width: 480px) {
+      padding-left: 10px;
+    }
+  }
+
+  &__card-info {
+    @include m.font-style-regular(v.$color-text-primary);
+    padding-left: 30px;
+    padding-top: 10px;
+    @media (max-width: 480px) {
+      padding-left: 10px;
+    }
+  }
+}

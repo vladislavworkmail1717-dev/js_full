@@ -1,0 +1,66 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.about {
+  display: flex;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../images/about-bg.png");
+  flex-wrap: wrap;
+  gap: 135px;
+
+  @media (max-width: 1295px) {
+    justify-content: center;
+    gap: 30px;
+  }
+
+  &__about-me {
+    @include m.padding-left-130();
+    @include m.padding-top-60();
+    @include m.padding-bottom-60();
+    width: 570px;
+  }
+
+  &__about-me-title {
+    @include m.font-white-bold(36px, 54px);
+    padding-bottom: 50px;
+  }
+
+  &__about-me-text {
+    @include m.font-style(
+      v.$font-text-primary,
+      v.$color-text-secondary,
+      v.$font-weight-bold,
+      v.$font-size-small,
+      v.$line-height-primary
+    );
+    padding-bottom: 35px;
+  }
+
+  &__about-me-btn {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  &__about-me-btn-question {
+    height: 40px;
+    border: 3px solid v.$color-primary;
+    background-color: transparent;
+  }
+
+  &__about-me-btn-appointment {
+    height: 40px;
+    border: none;
+    background-color: v.$color-primary;
+  }
+
+  &__img {
+    @include m.padding-top-60();
+    @include m.padding-bottom-60();
+
+    @media (max-width: 475px) {
+      width: 100%;
+    }
+  }
+}

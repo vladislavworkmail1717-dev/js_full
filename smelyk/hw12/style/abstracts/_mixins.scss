@@ -1,0 +1,53 @@
+@use "../abstracts/variables" as v;
+
+@mixin font-style($family, $color, $weight, $size, $l-height) {
+  font-family: $family;
+  color: $color;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $l-height;
+  letter-spacing: 0;
+}
+
+@mixin font-title-black() {
+  font-family: v.$font-text-secondary;
+  font-weight: v.$font-weight-bold;
+  font-size: v.$font-size-x-large;
+  line-height: v.$line-height-secondary;
+  letter-spacing: 0;
+  color: v.$color-text-primary;
+}
+
+@mixin font-white-bold($size, $l-height) {
+  font-family: v.$font-text-secondary;
+  font-weight: v.$font-weight-bold;
+  color: v.$color-text-secondary;
+  font-size: $size;
+  line-height: $l-height;
+  letter-spacing: 0;
+}
+
+@mixin font-style-regular($color) {
+  font-family: v.$font-text-primary;
+  font-weight: v.$font-weight-regular;
+  font-size: v.$font-size-small;
+  line-height: v.$line-height-primary;
+  letter-spacing: 0;
+  color: $color;
+}
+
+@mixin padding-left-130() {
+  padding-left: clamp(20px, 9vw, 130px);
+}
+
+@mixin padding-right-130() {
+  padding-right: clamp(20px, 9vw, 130px);
+}
+
+@mixin padding-top-60() {
+  padding-top: clamp(10px, 4vw, 60px);
+}
+
+@mixin padding-bottom-60() {
+  padding-bottom: clamp(10px, 4vw, 60px);
+}
