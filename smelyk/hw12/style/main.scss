@@ -1,0 +1,103 @@
+@use "./abstracts/variables" as v;
+@use "./layout/main";
+@use "./layout/menu";
+@use "./layout/consultations";
+@use "./layout/about";
+@use "./layout/signup";
+@use "./layout/info";
+@use "./layout/reviews";
+@use "./layout/articles";
+@use "./layout/faq";
+@use "./layout/contacts";
+@use "./layout/discount";
+@use "./layout/footer";
+
+body {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+p {
+  margin: 0;
+}
+
+.btn {
+  width: 250px;
+  border-radius: 10px;
+  font-family: v.$font-text-primary;
+  font-weight: v.$font-weight-light;
+  font-size: v.$font-size-medium;
+  line-height: v.$line-height-primary;
+  letter-spacing: 0;
+  color: v.$color-text-secondary;
+}
+
+.input {
+  border-radius: 10px;
+  border: 1px solid black;
+
+  &::placeholder {
+    font-family: v.$font-text-primary;
+    font-weight: v.$font-weight-light;
+    font-size: v.$font-size-medium;
+    line-height: v.$line-height-primary;
+    letter-spacing: 0;
+    color: v.$color-text-primary;
+    padding-left: 20px;
+  }
+}
+
+.previous-btn {
+  padding-right: 43px;
+  @media (max-width: 600px) {
+    padding-right: 5px;
+  }
+}
+
+.next-btn {
+  padding-left: 43px;
+  @media (max-width: 600px) {
+    padding-left: 5px;
+  }
+}
+
+.checkbox {
+  display: none;
+}
+
+.checkmark {
+  width: 15px;
+  height: 15px;
+  border: solid 1px v.$color-primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.checkmark::after {
+  content: "";
+  width: 11px;
+  height: 11px;
+  background-color: v.$color-primary;
+  display: none;
+}
+
+.checkbox:checked + .checkmark::after {
+  display: block;
+}
+
+.checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: v.$font-text-primary;
+  font-weight: v.$font-weight-regular;
+  font-size: 12px;
+  line-height: 30px;
+  letter-spacing: 0;
+  color: v.$color-primary;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}

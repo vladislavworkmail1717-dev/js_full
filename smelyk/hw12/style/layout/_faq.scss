@@ -1,0 +1,53 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.faq {
+  &__title {
+    @include m.font-title-black();
+    text-align: center;
+    padding-top: 23px;
+    padding-bottom: 78px;
+  }
+
+  &__items {
+    max-width: 945px;
+    padding: 0 305px 60px 190px;
+    @media (max-width: 850px) {
+      padding: 10px;
+    }
+  }
+
+  &__item-title {
+    @include m.font-style(
+      v.$font-text-secondary,
+      v.$color-text-primary,
+      v.$font-weight-bold,
+      v.$font-size-large,
+      32px
+    );
+    cursor: pointer;
+    list-style: none;
+  }
+
+  &__item-title::after {
+    content: url("../images/faq-open.svg");
+    padding-right: 20px;
+    float: left;
+  }
+
+  &__item[open] {
+    .faq__item-title {
+      color: v.$color-primary;
+    }
+
+    .faq__item-title::after {
+      content: url("../images/faq-close.svg");
+    }
+  }
+
+  &__item-text {
+    @include m.font-style-regular(v.$color-text-primary);
+    padding-left: 45px;
+    padding-bottom: 40px;
+  }
+}

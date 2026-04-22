@@ -1,0 +1,32 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.menu {
+  padding-right: 130px;
+  padding-left: 20px;
+  padding-top: 55px;
+
+  &__items {
+    display: flex;
+    gap: 17px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    @include m.font-style(
+      v.$font-text-primary,
+      #85aaab,
+      v.$font-weight-bold,
+      v.$font-size-medium,
+      100%
+    );
+    text-decoration: none;
+  }
+
+  &__item:hover {
+    color: #6de1e3;
+    border-bottom: solid 2px #6de1e3;
+  }
+}
