@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="uk" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind Project</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      /* Плавність для акордеона та слайдера */
+      .tab-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+      }
+      .tab-active .tab-content {
+        max-height: 200px;
+      }
+      .carousel-item {
+        display: none;
+      }
+      .carousel-item.active {
+        display: block;
+        animation: fadeIn 0.5s;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body class="flex flex-col h-full bg-gray-100 text-gray-800">
+    <!-- 3. HEADER з дворівневим меню -->
+    <header class="bg-slate-900 text-white shadow-lg sticky top-0 z-50">
+      <nav
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <a href="#" class="text-2xl font-bold text-amber-500">PROJECT_TW</a>
+
+        <ul class="hidden md:flex space-x-6 items-center">
+          <li>
+            <a href="#" class="hover:text-amber-500 transition">Головна</a>
+          </li>
+          <!-- Дворівневе меню -->
+          <li class="relative group">
+            <button class="hover:text-amber-500 flex items-center py-2">
+              Послуги
+              <svg
+                class="w-4 h-4 ml-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <ul
+              class="absolute hidden group-hover:block bg-white text-slate-800 w-48 py-2 rounded shadow-xl border border-gray-200"
+            >
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-amber-50"
+                  >Веб-дизайн</a
+                >
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-amber-50"
+                  >Розробка</a
+                >
+              </li>
+              <li class="border-t my-1"></li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-amber-50"
+                  >Маркетинг</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#" class="hover:text-amber-500 transition">Контакти</a>
+          </li>
+        </ul>
+
+        <button class="md:hidden text-white">☰</button>
+      </nav>
+    </header>
+
+    <!-- 1 & 2. Адаптивна сітка -->
+    <main class="container mx-auto px-4 py-8 flex-grow">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- 4. LEFT: Слайдер (4 зображення) -->
+        <aside class="lg:col-span-1 order-2 lg:order-1">
+          <div class="bg-white p-3 rounded-2xl shadow-md h-full">
+            <h5 class="font-bold mb-3 border-b pb-2">Галерея</h5>
+            <div id="slider" class="relative overflow-hidden rounded-xl">
+              <div class="carousel-item active">
+                <img
+                  src="./images/foto1.jpg"
+                  class="w-full h-[500px] object-cover"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="./images/foto2.jpg"
+                  class="w-full h-[500px] object-cover"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="./images/foto3.jpg"
+                  class="w-full h-[500px] object-cover"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="./images/foto4.jpg"
+                  class="w-full h-[500px] object-cover"
+                />
+              </div>
+
+              <button
+                onclick="moveSlider(-1)"
+                class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full"
+              >
+                ❮
+              </button>
+              <button
+                onclick="moveSlider(1)"
+                class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full"
+              >
+                ❯
+              </button>
+            </div>
+          </div>
+        </aside>
+
+        <!-- 5. MAIN: Акордеон (Ширша колонка) -->
+        <section class="lg:col-span-2 order-1 lg:order-2">
+          <div class="bg-white p-6 rounded-2xl shadow-md h-full">
+            <h2
+              class="text-3xl font-bold text-slate-800 mb-6 border-l-4 border-amber-500 pl-4"
+            >
+              Основний контент
+            </h2>
+
+            <div class="space-y-4">
+              <div class="border rounded-xl tab">
+                <button
+                  onclick="toggleAcc(this)"
+                  class="w-full flex justify-between p-4 font-semibold text-left"
+                >
+                  Інформація про проект <span class="text-amber-500">+</span>
+                </button>
+                <div class="tab-content px-4 text-gray-600">
+                  Це сучасна версія на Tailwind CSS. Гнучка, швидка та
+                  адаптивна.
+                </div>
+              </div>
+              <div class="border rounded-xl tab">
+                <button
+                  onclick="toggleAcc(this)"
+                  class="w-full flex justify-between p-4 font-semibold text-left"
+                >
+                  Наші переваги <span class="text-amber-500">+</span>
+                </button>
+                <div class="tab-content px-4 text-gray-600">
+                  Ми використовуємо передові технології для створення кращого
+                  досвіду.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6. RIGHT: Форма -->
+        <aside class="col-span-1 md:col-span-2 lg:col-span-1 order-3">
+          <div class="bg-white p-4 rounded-2xl shadow-md h-full">
+            <h5 class="font-bold mb-4 border-b pb-2">Зворотний зв'язок</h5>
+            <form class="space-y-3">
+              <input
+                type="text"
+                placeholder="Ваше ім'я"
+                class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-amber-500 outline-none"
+              />
+              <input
+                type="email"
+                placeholder="Email"
+                class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-amber-500 outline-none"
+              />
+              <select
+                class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-amber-500 outline-none"
+              >
+                <option>Загальне питання</option>
+                <option>Техпідтримка</option>
+              </select>
+              <textarea
+                placeholder="Повідомлення"
+                rows="3"
+                class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-amber-500 outline-none"
+              ></textarea>
+              <label class="flex items-center space-x-2 text-sm">
+                <input type="checkbox" class="w-4 h-4 accent-amber-500" />
+                <span>Згоден з умовами</span>
+              </label>
+              <button
+                class="w-full bg-amber-500 text-white font-bold py-2 rounded-lg hover:bg-amber-600 transition shadow-lg"
+              >
+                Надіслати
+              </button>
+            </form>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <!-- 7. FOOTER -->
+    <footer class="bg-slate-900 text-gray-400 py-8 border-t border-slate-800">
+      <div class="container mx-auto px-4 text-center">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          <div>
+            <h6 class="text-white font-bold mb-2">Про нас</h6>
+            <p class="text-sm">Tailwind версія вашого проекту.</p>
+          </div>
+          <div>
+            <h6 class="text-white font-bold mb-2">Контакти</h6>
+            <p class="text-sm">info@example.com</p>
+          </div>
+          <div>
+            <h6 class="text-white font-bold mb-2">Ми в мережі</h6>
+            <div class="space-x-4">
+              <a href="#" class="hover:text-amber-500">FB</a
+              ><a href="#" class="hover:text-amber-500">IG</a>
+            </div>
+          </div>
+        </div>
+        <p class="text-xs">&copy; 2024 My Tailwind Project. Built with ❤️</p>
+      </div>
+    </footer>
+
+    <script>
+      // JS для акордеона
+      function toggleAcc(btn) {
+        const tab = btn.parentElement;
+        tab.classList.toggle("tab-active");
+        btn.querySelector("span").innerText = tab.classList.contains(
+          "tab-active",
+        )
+          ? "−"
+          : "+";
+      }
+
+      // JS для слайдера
+      let currentSlide = 0;
+      const slides = document.querySelectorAll(".carousel-item");
+      function moveSlider(n) {
+        slides[currentSlide].classList.remove("active");
+        currentSlide = (n + currentSlide + slides.length) % slides.length;
+        slides[currentSlide].classList.add("active");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+
+  /* --primary: #85aaab;
+  --light: #6de1e3;
+  --dark: #2D5E5E;
+
+  --text-color-main: #000000;
+  --text-color-alt: #fff;
+  --ua-block: #ADDDDE; */
+.custom_btn{
+   --bs-btn-bg:#85aaab;
+  /* --bs-btn-disabled-color: #007bff;
+  --bs-btn-hover-color: #85aaab;
+  --bs-btn-active-color: #005cbf;
+  --bs-btn-focus-color: #0056b3; */
+  
+}
+ .about{
+  background: url('../images/Rectangle.jpg') no-repeat center center/cover rgba(0, 0, 0, 0.6);
+  background-blend-mode: multiply;
+ }
+.buttons_wrapper{
+  grid-template-columns: 1fr 1fr;
+}

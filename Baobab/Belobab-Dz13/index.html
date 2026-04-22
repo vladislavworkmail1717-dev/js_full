@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SVG Basics Task</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Основи роботи з SVG</h1>
+
+    <svg width="800" height="200" viewBox="0 0 800 200">
+      <!-- Квадрат -->
+      <rect class="shape square" x="50" y="50" width="100" height="100" />
+
+      <!-- Прямокутник (з анімацією) -->
+      <rect
+        class="shape rectangle animated"
+        x="200"
+        y="50"
+        width="150"
+        height="100"
+      />
+
+      <!-- Коло -->
+      <circle class="shape circle" cx="450" cy="100" r="50" />
+
+      <!-- Еліпс -->
+      <ellipse class="shape ellipse" cx="650" cy="100" rx="80" ry="50" />
+    </svg>
+  </body>
+</html>

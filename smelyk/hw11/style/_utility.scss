@@ -1,0 +1,27 @@
+@import "./font-clamps";
+
+$mobile: 563px;
+
+@function clamp-font($font-size) {
+  @return map-get($font-clamps, $font-size);
+}
+
+@mixin font-styling(
+  $font-weight,
+  $font-size,
+  $line-height,
+  $line-spacing,
+  $color
+) {
+  font-weight: $font-weight;
+  font-size: clamp-font($font-size);
+  line-height: $line-height;
+  letter-spacing: $line-spacing;
+  color: $color;
+}
+
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}

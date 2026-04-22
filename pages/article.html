@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0 maximum-scale=1.0 minimum-scale=1.0"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Головна сторінка</title>
+  </head>
+
+  <body>
+    <!-- <div class="grid grid-cols-[repeat(3,_minmax(30%,_334px))] gap-5 justify-between"> -->
+    <main
+      class="bg-[url('../images/article_bg.jpg')] bg-[rgb(0,0,0,0.5)] bg-blend-multiply"
+    >
+      <section class="container mx-auto px-4">
+        <h1 class="text-[48px] font-bold mb-[54px] text-white">
+          Останні статті
+        </h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <article class="p-6 group cursor-pointer">
+            <img
+              src="../images/news-1.jpg"
+              alt="Зображення статті"
+              class="w-full mb-4"
+            />
+            <h2 class="text-[24px] font-bold mb-2 text-white">
+              <a href="#" class="text-white group-hover:text-gray-300">
+                Жити, а не боятися: як впоратися з канцерофобією
+              </a>
+            </h2>
+          </article>
+          <article class="p-6">
+            <img
+              src="../images/news-2.jpg "
+              alt="Зображення статті"
+              class="w-full mb-4"
+            />
+            <h2 class="text-[24px] font-bold mb-2 text-white">
+              <a href="#" class="text-white hover:text-gray-300">
+                Брате мій, мій ворог: чому ворогують брати і сестри?
+              </a>
+            </h2>
+          </article>
+          <article class="p-6">
+            <img
+              src="../images/news-3.jpg"
+              alt="Зображення статті"
+              class="w-full mb-4"
+            />
+            <h2 class="text-[24px] font-bold mb-2 text-white">8 порад, як залишатися продуктивним і не збожеволіти</h2>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

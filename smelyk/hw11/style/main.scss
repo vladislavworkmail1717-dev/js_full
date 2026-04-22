@@ -1,0 +1,29 @@
+@import "./colors";
+@import "./fonts";
+@import "./header";
+@import "./about";
+@import "./numbers";
+@import "./video";
+@import "./footer";
+
+body {
+  width: 100%;
+  font-family: $primary-font;
+  font-weight: $primary-font-weight;
+  font-size: $primary-font-size;
+  line-height: $primary-line-height;
+  letter-spacing: $primary-letter-spacing;
+  margin: 0;
+}
+
+@media (min-width: 1920px) {
+  body {
+    width: 1920px;
+    margin: 0 auto;
+  }
+}
+
+.container_left {
+  padding-left: clamp(20px, calc(50vw - 560px), 400px);
+  padding-right: 20px;
+}

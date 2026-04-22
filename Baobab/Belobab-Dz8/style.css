@@ -1,0 +1,102 @@
+.block {
+  width: 700px;
+  height: 600px;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid;
+}
+
+.block1 {
+  width: 650px;
+  height: 80px;
+  background-color: rgb(133, 133, 133);
+  border: 1px solid #000000;
+  margin: 20px;
+}
+
+.block2 {
+  width: 100px;
+  height: 40px;
+  background-color: rgb(85, 85, 85);
+  border: 1px solid #000000;
+  margin: 20px;
+}
+
+.block2-2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.block1-2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end; /* Притискає блоки до правого краю */
+  align-items: stretch; /* Розтягує блоки по висоті батька*/
+  gap: 40px;
+
+  width: 650px;
+  height: 120px;
+  background-color: rgb(133, 133, 133);
+  border: 2px solid;
+  margin: 20px;
+  padding: 10px;
+  box-sizing: border-box; /* Щоб padding не збільшував ширину 650px */
+}
+
+.big-box {
+  width: 100px;
+  background-color: rgb(85, 85, 85);
+  border: 1px solid #000000;
+}
+
+/* Права колонка-обгортка */
+.side-column {
+  display: flex;
+  flex-direction: column; /* Маленькі блоки встають один під одного */
+  justify-content: space-between; /* Розподіляє їх по краях (верх/низ) */
+  width: 100px;
+  margin-right: 9px;
+}
+
+.small-box {
+  height: calc(50% - 7.5px); /* Рівно половина висоти мінус половина гепа */
+  background-color: rgb(85, 85, 85);
+  border: 1px solid #000000;
+  box-sizing: border-box;
+}
+
+.block1-3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* Притискає блоки до центру */
+  align-items: stretch;
+  gap: 40px;
+
+  width: 650px;
+  height: 120px;
+  background-color: rgb(133, 133, 133);
+  border: 2px solid;
+  margin: 20px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.big-box1 {
+  width: 140px;
+  background-color: rgb(85, 85, 85);
+  border: 1px solid #000000;
+}
+
+.side-column1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 140px;
+}

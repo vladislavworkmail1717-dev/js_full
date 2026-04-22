@@ -1,0 +1,49 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* Спільний стиль для всіх фігур */
+.shape {
+  stroke-width: 5px;
+}
+
+/* Унікальні кольори для кожної фігури */
+.square {
+  fill: #ffd700; /* Золотий */
+  stroke: #b8860b;
+}
+
+.rectangle {
+  fill: #87ceeb; /* Небесно-блакитний */
+  stroke: #4682b4;
+}
+
+.circle {
+  fill: #98fb98; /* Світло-зелений */
+  stroke: #2e8b57;
+}
+
+.ellipse {
+  fill: #ffb6c1; /* Рожевий */
+  stroke: #db7093;
+}
+
+/* Анімація для прямокутника */
+.animated {
+  animation: colorChange 3s infinite alternate ease-in-out;
+}
+
+@keyframes colorChange {
+  from {
+    fill: #87ceeb;
+    stroke: #4682b4;
+  }
+  to {
+    fill: #ff4500; /* Оранжево-червоний */
+    stroke: #8b0000; /* Темно-червоний */
+  }
+}
