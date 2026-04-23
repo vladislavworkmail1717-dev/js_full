@@ -1,0 +1,36 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.articles {
+  display: flex;
+  flex-direction: column;
+
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../images/news-bg.png");
+  background-size: cover;
+
+  &__title {
+    @include m.font-white-bold(v.$font-size-x-large, v.$line-height-secondary);
+    padding-left: 142px;
+    padding-top: 60px;
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(20px, 6vw, 84px);
+    @include m.padding-bottom-60();
+    @include m.padding-top-60();
+    @include m.padding-left-130();
+    @include m.padding-right-130();
+  }
+
+  &__item {
+    width: 334px;
+  }
+
+  &__item-text {
+    @include m.font-white-bold(v.$font-size-large, 32px);
+  }
+}

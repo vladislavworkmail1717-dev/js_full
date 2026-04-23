@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="ua">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="./style/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="./style/main.css" />
+    <title>Особистий психолог</title>
+  </head>
+
+  <body>
+    <header class="main">
+      <div class="main__top-bar">
+        <img class="main__logo" src="./images/logo.svg" alt="Лого компанії" />
+
+        <nav class="menu">
+          <ul class="menu__items">
+            <li><a href="" class="menu__item">Головна</a></li>
+            <li><a href="" class="menu__item">Події</a></li>
+            <li><a href="" class="menu__item">Контакти</a></li>
+            <li><a href="" class="menu__item">Блог</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="main__about">
+        <h1 class="main__about-title">Ваш особистий психолог У Кривому Розі</h1>
+        <p class="main__about-text">
+          Особисті, сімейні та групові консультації
+        </p>
+        <button class="main__about-btn btn">Більше</button>
+      </div>
+    </header>
+
+    <section class="consultations">
+      <div class="consultations__item">
+        <img
+          class="consultations__item-img"
+          src="./images/goal.svg"
+          alt="Іконка для особистих консультацій."
+        />
+        <p class="consultations__item-title">Особисті консультації</p>
+        <p class="consultations__item-text">
+          Досягнення поставленої мети буває складним завданням, але за
+          правильної підтримки немає нічого неможливого
+        </p>
+      </div>
+      <div class="consultations__item">
+        <img
+          class="consultations__item-img"
+          src="./images/family-room.svg"
+          alt="Іконка для сімейної терапії."
+        />
+        <p class="consultations__item-title">Сімейна терапія</p>
+        <p class="consultations__item-text">
+          У будь-якої родини бувають кризові ситуації, тому в такі моменти
+          важливо підтримувати одне одного.
+        </p>
+      </div>
+      <div class="consultations__item">
+        <img
+          class="consultations__item-img"
+          src="./images/network.svg"
+          alt="Іконка для групових занятть."
+        />
+        <p class="consultations__item-title">Сенситивні групи</p>
+        <p class="consultations__item-text">
+          Групові заняття — чудове місце, щоб навчитися спілкуватися з
+          оточуючими людьми та розкрити свій потенціал
+        </p>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="about__about-me">
+        <p class="about__about-me-title">Трохи про мене</p>
+        <p class="about__about-me-text">
+          Далеко-далеко за словесними горами країни голосних і приголосних
+          живуть рибні тексти. Вдалині від усіх живуть вони в буквених будинках
+          на березі Семантика великого мовного океану. Маленький струмок Даль
+          дзюрчить по всій країні та забезпечує її всіма необхідними правилами.
+          Ця парадигматична країна, в якій смажені члени речення залітають
+          прямо.
+        </p>
+        <div class="about__about-me-btn">
+          <button class="about__about-me-btn-question btn">
+            Поставити питання
+          </button>
+          <button class="about__about-me-btn-appointment btn">
+            Хочу консультацію
+          </button>
+        </div>
+      </div>
+      <img
+        class="about__img"
+        src="./images/about photo.jpg"
+        alt="Фото члоловіка, що посміхається, в окулярах"
+      />
+    </section>
+
+    <section class="signup">
+      <p class="signup__title">Записатися на консультацію</p>
+      <form class="signup__form">
+        <input
+          class="signup__form-input-name input"
+          id="input-name"
+          placeholder="Ваше имʼя *"
+        />
+        <input
+          class="signup__form-input-phone input"
+          id="input-phone"
+          placeholder="Ваш телефон *"
+        />
+        <select class="signup__form-input-topic input" id="input-topic">
+          <option value="" class="opt">Тема зустрічі *</option>
+        </select>
+        <textarea
+          class="signup__form-request input"
+          id="input-request"
+          placeholder="Побажання"
+        ></textarea>
+      </form>
+      <label class="signup__checkbox-label checkbox-label" for="checkbox-confidential">
+        <input
+          class="signup__checkbox checkbox"
+          id="checkbox-confidential"
+          type="checkbox"
+        />
+        <span class="signup__checkmark checkmark"></span>
+        Я згоден із політикою конфіденційності</label
+      >
+      <button class="signup__btn btn">Відправити</button>
+    </section>
+
+    <section class="info">
+      <div class="info__item">
+        <p class="info__item-title">120 хв</p>
+        <p class="info__item-sub-title">Тривалість консультации</p>
+        <p class="info__item-text">
+          Оптимально для того, щоб знайти вихід та зробити черговий крок
+        </p>
+      </div>
+      <div class="info__item">
+        <p class="info__item-title">від 500 грн</p>
+        <p class="info__item-sub-title">Вартість</p>
+        <p class="info__item-text">
+          Ціна доступна для будь-якої людини, яка потребує допомоги
+        </p>
+      </div>
+      <div class="info__item">
+        <p class="info__item-title">250+</p>
+        <p class="info__item-sub-title">Задоволених клієнтів</p>
+        <p class="info__item-text">
+          Результат — улыбка на лице и ощущение счастья
+        </p>
+      </div>
+    </section>
+
+    <section class="reviews">
+      <p class="reviews__title">Відгуки клієнтів</p>
+      <div class="reviews__slider">
+        <button class="reviews__btn previous-btn">
+          <img src="./images/previous.svg" />
+        </button>
+        <div class="reviews__item">
+          <div class="reviews__item-top">
+            <img
+              class="reviews__item-img"
+              src="./images/girl.png"
+              alt="Фото клієнтки"
+            />
+            <p class="reviews__item-title">Марина, 25 лет</p>
+          </div>
+          <p class="reviews__item-text">
+            Звернулася до Сергія, бо нерви вже були на межі. Ситуація здавалася
+            мені безвихідною – незважаючи на те, що я працюю і навчаюсь. Сама не
+            помітила, як позбулася величезної грудки. Нарешті побачила вихід із
+            ситуації, що склалася, і тепер є надія... Велике спасибі Валентину.
+          </p>
+        </div>
+        <button class="reviews__btn next-btn">
+          <img src="./images/next.svg" />
+        </button>
+      </div>
+    </section>
+
+    <section class="articles">
+      <p class="articles__title">Останні статті</p>
+      <div class="articles__items">
+        <div class="articles__item">
+          <img
+            class="articles__item-img"
+            src="./images/news-1.jpg"
+            alt="Фото чоловіка над прірвою"
+          />
+          <p class="articles__item-text">
+            Жити, а не боятися: як впоратися з канцерофобією
+          </p>
+        </div>
+        <div class="articles__item">
+          <img
+            class="articles__item-img"
+            src="./images/news-2.jpg"
+            alt="Фото книжки"
+          />
+          <p class="articles__item-text">
+            Брате мій, мій ворог: чому ворогують брати і сестри?
+          </p>
+        </div>
+        <div class="articles__item">
+          <img
+            class="articles__item-img"
+            src="./images/news-3.jpg"
+            alt="Фото ноутбука на ліжку"
+          />
+          <p class="articles__item-text">
+            8 порад, як залишатися продуктивним і не збожеволіти
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq">
+      <p class="faq__title">Часті запитання</p>
+      <div class="faq__items">
+        <details class="faq__item">
+          <summary class="faq__item-title">Який у вас графік роботи?</summary>
+          <p class="faq__item-text">
+            Я працюю, проводжу консультації з понеділка по суботу з 15:00 до
+            21:00. Записатися на прийом можна будь-якого дня з 9:00 до 21:00
+          </p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__item-title">Скільки триває сесія?</summary>
+          <p class="faq__item-text"></p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__item-title">
+            Скільки коштує консультація?
+          </summary>
+          <p class="faq__item-text"></p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__item-title">
+            Що собою представляють консультації?
+          </summary>
+          <p class="faq__item-text"></p>
+        </details>
+      </div>
+    </section>
+
+    <section class="contacts">
+      <div class="contacts__map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d5978.479599366543!2d17.950852476605842!3d69.24425719428159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sno!4v1776506224283!5m2!1sen!2sno"
+          width="1440"
+          height="600"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+      <div class="contacts__card">
+        <p class="contacts__card-title">Контакти</p>
+        <p class="contacts__card-info">Тел: +380 99 123 45 67</p>
+        <p class="contacts__card-info">Viber: +380 99 123 45 67</p>
+        <p class="contacts__card-info">Telegram: @phyholog_sergei</p>
+        <p class="contacts__card-info">Instagram: @phyholog_sergei</p>
+        <p class="contacts__card-info">E-mail: phyholog_sergei@gmail.com</p>
+        <p class="contacts__card-info">
+          Адреса: Вул. Центральна буд. 10, офіс 1
+        </p>
+      </div>
+    </section>
+
+    <section class="discount">
+        <p class="discount__title">Записатися зі знижкою 50 грн</p>
+        <div class="discount__contacts">
+            <input class="discount__contacts-name input" placeholder="Ваше имʼя *">
+            <input class="discount__contacts-phone input" placeholder="Ваш телефон *">
+            <button class="discount__contacts-btn btn">Записатися зі знижкою</button>
+        </div>
+        <label class="discount__checkbox-label checkbox-label" for="discount-checkbox">
+        <input
+          class="discount__checkbox checkbox"
+          id="discount-checkbox"
+          type="checkbox"
+        />
+        <span class="discount__checkmark checkmark"></span>
+        Я згоден із політикою конфіденційності</label
+      >
+    </section>
+
+    <footer class="footer">
+        <img class="footer__img" src="./images/logo.svg" alt="Лого компанії">
+        <div class="footer__contacts">
+            <p class="footer__contacts-item" id="footer-insta">@phyholog_sergei</p>
+            <p class="footer__contacts-item" id="footer-viber">+380 99 123 45 67</p>
+            <p class="footer__contacts-item" id="footer-telegram">@phyholog_sergei</p>
+            <p class="footer__contacts-item" id="footer-phone">+380 99 123 45 67</p>
+        </div>
+    </footer>
+  </body>
+</html>

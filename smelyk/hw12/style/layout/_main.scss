@@ -1,0 +1,64 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.main {
+  background-image: url("../images/photo-main.jpg");
+  background-size: cover;
+  background-position: center;
+
+  @media (max-width: 560px) {
+    background-position: left bottom;
+  }
+  width: 100%;
+
+  &__top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0;
+
+    flex-wrap: wrap;
+  }
+
+  &__logo {
+    padding-top: clamp(10px, 2vw, 30px);
+    padding-right: 30px;
+    @include m.padding-left-130();
+  }
+
+  &__about {
+    padding-top: clamp(30px, 10vw, 150px);
+    @include m.padding-left-130();
+    padding-bottom: clamp(40px, 13vw, 190px);
+  }
+
+  &__about-title {
+    @include m.font-white-bold(40px, 60px);
+    max-width: 416px;
+
+    @media (max-width: 950px) {
+      max-width: 300px;
+    }
+    margin: 0;
+  }
+
+  &__about-text {
+    @include m.font-style(
+      v.$font-text-primary,
+      v.$color-text-secondary,
+      v.$font-weight-light,
+      v.$font-size-large,
+      36px
+    );
+    width: 255px;
+
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  &__about-btn {
+    height: 48px;
+    border: none;
+    background-color: v.$color-primary;
+  }
+}

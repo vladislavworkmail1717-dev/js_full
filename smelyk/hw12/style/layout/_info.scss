@@ -1,0 +1,42 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.info {
+  display: grid;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../images/counter-bg.png");
+  background-size: cover;
+  grid-template-columns: repeat(auto-fit, minmax(303px, 1fr));
+  gap: 85px;
+  @include m.padding-top-60();
+  @include m.padding-bottom-60();
+  padding-right: clamp(20px, 9vw, 180px);
+  padding-left: clamp(20px, 9vw, 138px);
+
+  &__item {
+    text-align: center;
+    justify-self: center;
+  }
+
+  &__item-title {
+    @include m.font-style(
+      v.$font-text-primary,
+      v.$color-text-secondary,
+      900,
+      v.$font-size-x-large,
+      v.$line-height-secondary
+    );
+  }
+
+  &__item-sub-title {
+    @include m.font-white-bold(v.$font-size-large, 32px);
+    padding-top: 14px;
+  }
+
+  &__item-text {
+    @include m.font-style-regular(v.$color-text-secondary);
+    padding-top: 20px;
+    max-width: 303px;
+  }
+}
