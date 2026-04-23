@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адаптивний шаблон проєкту (Без JS)</title>
+    <style>
+        /* SCSS VARIABLES IMITATION */
+        :root {
+            --primary-color: #2563eb;
+            --dark-bg: #1e293b;
+            --light-bg: #f8fafc;
+            --text-main: #334155;
+            --transition: all 0.3s ease;
+            --container-width: 1140px;
+        }
+
+        /* BASE STYLES */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER & NAV */
+        header {
+            background: var(--dark-bg);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* BURGER MENU (No JS) */
+        #burger-toggle {
+            display: none;
+        }
+
+        .burger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .burger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            transition: var(--transition);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://placeholder.com');
+            background-size: cover;
+            color: white;
+        }
+
+        /* TABS SECTION (No JS) */
+        .tabs-container {
+            padding: 50px 0;
+        }
+
+        /* Приховуємо радіокнопки для табів */
+        .tab-switch {
+            display: none;
+        }
+
+        .tabs-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tab-btn {
+            padding: 10px 25px;
+            cursor: pointer;
+            border: 2px solid var(--primary-color);
+            background: none;
+            transition: var(--transition);
+            font-weight: bold;
+            color: var(--text-main);
+        }
+
+        .tab-btn:hover {
+            background: rgba(37, 99, 235, 0.1);
+        }
+
+        /* Схований за замовчуванням контент */
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* Логіка перемикання табів та активних кнопок через CSS */
+        #tab1-radio:checked ~ .tabs-nav .tab-btn[for="tab1-radio"],
+        #tab2-radio:checked ~ .tabs-nav .tab-btn[for="tab2-radio"],
+        #tab3-radio:checked ~ .tabs-nav .tab-btn[for="tab3-radio"] {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        #tab1-radio:checked ~ .tab-content#tab1,
+        #tab2-radio:checked ~ .tab-content#tab2,
+        #tab3-radio:checked ~ .tab-content#tab3 {
+            display: block;
+        }
+
+        /* RESPONSIVE (Media Queries) */
+        @media (max-width: 768px) {
+            .burger {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none; 
+                flex-direction: column;
+                position: absolute;
+                top: 64px;
+                left: 0;
+                width: 100%;
+                background: var(--dark-bg);
+                padding: 20px;
+                text-align: center;
+            }
+
+            /* Показуємо меню при натисканні на бургер */
+            #burger-toggle:checked ~ nav .nav-links {
+                display: flex;
+            }
+
+            /* Анімація гамбургера при активації */
+            #burger-toggle:checked ~ .burger span:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            #burger-toggle:checked ~ .burger span:nth-child(2) {
+                opacity: 0;
+            }
+            #burger-toggle:checked ~ .burger span:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo"><h2>MY PROJ</h2></div>
+            
+            <!-- Чекбокс для керування меню -->
+            <input type="checkbox" id="burger-toggle">
+            
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Головна</a></li>
+                    <li><a href="#about">Про нас</a></li>
+                    <li><a href="#services">Послуги</a></li>
+                    <li><a href="#contact">Контакти</a></li>
+                </ul>
+            </nav>
+
+            <!-- Тег label зв'язаний з чекбоксом через 'for' -->
+            <label for="burger-toggle" class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Адаптивне верстання та динамічні елементи</h1>
+            <p>Проєкт виконано без використання JS</p>
+        </div>
+    </section>
+
+    <section class="tabs-container container">
+        
+        <!-- Радіокнопки для керування табами -->
+        <input type="radio" id="tab1-radio" name="tabs" class="tab-switch" checked>
+        <input type="radio" id="tab2-radio" name="tabs" class="tab-switch">
+        <input type="radio" id="tab3-radio" name="tabs" class="tab-switch">
+
+        <!-- Навігація табів через label -->
+        <div class="tabs-nav">
+            <label for="tab1-radio" class="tab-btn">Опис</label>
+            <label for="tab2-radio" class="tab-btn">Технології</label>
+            <label for="tab3-radio" class="tab-btn">Переваги</label>
+        </div>
+
+        <!-- Блоки контенту -->
+        <div id="tab1" class="tab-content">
+            <h3>Про проєкт</h3>
+            <p>Це приклад повної реалізації шаблону в одному файлі без скриптів.</p>
+        </div>
+        <div id="tab2" class="tab-content">
+            <h3>Технологічний стек</h3>
+            <p>Виключно HTML5 та CSS3 (використано метод CSS Checkbox Hack).</p>
+        </div>
+        <div id="tab3" class="tab-content">
+            <h3>Наші переваги</h3>
+            <p>Працює навіть із вимкненим JS у браузері користувача.</p>
+        </div>
+    </section>
+
+</body>
+</html>
