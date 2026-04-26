@@ -1,0 +1,43 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.design {
+    text-align: center;
+    padding: 60px 0;
+
+    &__title {
+        font-size: clamp(26px, 5vw, 48px);
+        color: $color-black;
+        font-weight: 500;
+    }
+
+    &__text {
+        margin: 25px auto;
+        max-width: 500px;
+    }
+    
+    @include tablet {
+        padding: 100px 0;
+    }
+
+    @include desktop {
+        text-align: left;
+        padding: 140px 0;
+
+        &__text {
+            margin-left: 0;
+        }
+    }
+
+    .btn {
+        margin: 0 auto;
+    }
+
+    @include desktop {
+        text-align: left;
+
+        .btn {
+            margin: 0;
+        }
+    }
+}

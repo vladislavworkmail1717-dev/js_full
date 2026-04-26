@@ -1,0 +1,33 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.discount {
+  text-align: center;
+
+  &__title {
+    @include m.font-title-black();
+    text-align: center;
+    padding-top: 60px;
+  }
+
+  &__contacts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    padding-left: 135px;
+    padding-right: 135px;
+    padding-top: 60px;
+  }
+
+  &__contacts-name,
+  &__contacts-phone {
+    width: 370px;
+    height: 40px;
+  }
+
+  &__contacts-btn {
+    width: 370px;
+    background-color: v.$color-primary;
+    border: none;
+  }
+}

@@ -1,0 +1,54 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.footer {
+  height: 190px;
+  background-color: v.$color-primary;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  @media (max-width: 720px) {
+    height: auto;
+  }
+
+  &__img {
+    width: 200px;
+    @include m.padding-left-130();
+  }
+
+  &__contacts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+  }
+
+  &__contacts-item {
+    @include m.font-style-regular(v.$color-text-secondary);
+    font-size: 14px;
+  }
+
+  #footer-insta::before {
+    content: url("../images/instagram-logo.svg");
+    padding-right: 10px;
+    vertical-align: middle;
+  }
+
+  #footer-viber::before {
+    content: url("../images/viber.svg");
+    padding-right: 10px;
+    vertical-align: middle;
+  }
+
+  #footer-telegram::before {
+    content: url("../images/telegram.svg");
+    padding-right: 10px;
+    vertical-align: middle;
+  }
+
+  #footer-phone::before {
+    content: url("../images/phone-call.svg");
+    padding-right: 10px;
+    vertical-align: middle;
+  }
+}
