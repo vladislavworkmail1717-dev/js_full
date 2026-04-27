@@ -1,0 +1,13 @@
+.footer,
+.header,
+.accordion-button {
+  background-color: rgb(59, 193, 230);
+}
+
+.nav-link {
+  color: rgb(3, 36, 90);
+}
+
+.nav-link:hover {
+  color: rgb(227, 232, 240);
+}
