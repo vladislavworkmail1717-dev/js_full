@@ -17,51 +17,52 @@
 
     <title>Урок js 2</title>
     <script>
-var num1 = 5;
-console.log(++num1); // 6
-num1 = 6
-console.log(num1++); //  = console.log(num1); num1 =  num1 + 1; // 6
-var isEqual = (10 == 5); // false
-var isNotEqual = (10 != 5); // true
-var isGreater = (10 >= 5); // true
-var isLess = (10 <= 5); // false
+      var num1 = 5;
+      console.log(++num1); // 6
+      num1 = 6;
+      console.log(num1++); //  = console.log(num1); num1 =  num1 + 1; // 6
+      var isEqual = 10 == 5; // false
+      var isNotEqual = 10 != 5; // true
+      var isGreater = 10 >= 5; // true
+      var isLess = 10 <= 5; // false
 
-var andOperation = (true && false); // false
-var orOperation = (true || false); // true
-var andOperation = ("asdf" && 1); // true
-var orOperation = (true || false); // true
-// "asdf"  1   = true
-// 0 ""  = false
+      var andOperation = true && false; // false
+      var orOperation = true || false; // true
+      var andOperation = "asdf" && 1; // true
+      var orOperation = true || false; // true
+      // "asdf"  1   = true
+      // 0 ""  = false
 
-var firstName = 'Іван';
-var firstName = "Іва'н";
+      var firstName = "Іван";
+      var firstName = "Іва'н";
 
-var text = 'Привіт, світе!';
-console.log(text.substring(0, 6)); // Виведе: Привіт
+      var text = "Привіт, світе!";
+      console.log(text.substring(0, 6)); // Виведе: Привіт
 
-var text = 'Привіт, світе!';
-console.log(text.replace('і', 'друже')); // Виведе: Привіт, друже!
+      var text = "Привіт, світе!";
+      console.log(text.replace("і", "друже")); // Виведе: Привіт, друже!
 
-//888888888888888888888888888
-var isRainy = true;
-var isSunny = false;
+      //888888888888888888888888888
+      var isRainy = true;
+      var isSunny = false;
 
-// Логічне "І" та "АБО"
-if (isRainy && isSunny) {
-    console.log('Можлива веселка!');
-} else if (isRainy || isSunny) {
-    console.log('Погода змінюється.');
-} else {
-    console.log('Незрозуміла погода.');
-}
-
+      // Логічне "І" та "АБО"
+      if (isRainy && isSunny) {
+        console.log("Можлива веселка!");
+      } else if (isRainy || isSunny) {
+        console.log("Погода змінюється.");
+      } else {
+        console.log("Незрозуміла погода.");
+      }
     </script>
-    <script src="./dz-2.js">
-
-    </script>
+    <script src="./js/2/dz-2.js"></script>
+    <script src="./js/2/getRandomInt.js"></script>
+    <script src="./js/2/greetByName.js"></script>
+    <script src="./js/2/sumBigIntegers.js"></script>
   </head>
   <html>
     <body>
+      <H1>Урок js 2</H1>
       <form action="javascript:alert('hi')">
         <button type="submit">Save</button>
       </form>
