@@ -2,60 +2,116 @@
 <html lang="uk">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Мої домашні завдання</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@600;800&family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
     <h1>Мої домашні завдання</h1>
 
-    <table>
-      <tr>
-        <th>№</th>
-        <th>Назва</th>
-        <th>Посилання</th>
-      </tr>
-
-      <tr>
-        <td>1.1</td>
-        <td>
-          Практичний вступ до HTML: налаштування VSCode та створення сторінки
-        </td>
-        <td>
+    <div class="grid">
+      <div class="card">
+        <div class="card-header">
+          <span class="card-num">1.1</span>
+          <span class="card-title"
+            >Практичний вступ до HTML: налаштування VSCode та створення
+            сторінки</span
+          >
+        </div>
+        <div class="card-preview">
+          <iframe
+            src="./hw/1"
+            loading="lazy"
+            scrolling="no"
+            tabindex="-1"
+          ></iframe>
+        </div>
+        <div class="card-footer">
           <a class="btn" href="./hw/1" target="_blank">Відкрити</a>
-        </td>
-      </tr>
+        </div>
+      </div>
 
-      <tr>
-        <td>2.1</td>
-        <td>Створення структури багатосторінкового веб-сайту</td>
-        <td>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-num">2.1</span>
+          <span class="card-title"
+            >Створення структури багатосторінкового веб-сайту</span
+          >
+        </div>
+        <div class="card-preview">
+          <iframe
+            src="./hw/2"
+            loading="lazy"
+            scrolling="no"
+            tabindex="-1"
+          ></iframe>
+        </div>
+        <div class="card-footer">
           <a class="btn" href="./hw/2" target="_blank">Відкрити</a>
-        </td>
-      </tr>
+        </div>
+      </div>
 
-      <tr>
-        <td>3.1</td>
-        <td>Візуальне оформлення багатосторінкового веб-сайту</td>
-        <td>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-num">3.1</span>
+          <span class="card-title"
+            >Візуальне оформлення багатосторінкового веб-сайту</span
+          >
+        </div>
+        <div class="card-preview">
+          <iframe
+            src="./hw/3"
+            loading="lazy"
+            scrolling="no"
+            tabindex="-1"
+          ></iframe>
+        </div>
+        <div class="card-footer">
           <a class="btn" href="./hw/3" target="_blank">Відкрити</a>
-        </td>
-      </tr>
+        </div>
+      </div>
 
-      <tr>
-        <td>4.1</td>
-        <td>Селектори CSS, специфічність селекторів</td>
-        <td>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-num">4.1</span>
+          <span class="card-title"
+            >Селектори CSS, специфічність селекторів</span
+          >
+        </div>
+        <div class="card-preview">
+          <iframe
+            src="./hw/4"
+            loading="lazy"
+            scrolling="no"
+            tabindex="-1"
+          ></iframe>
+        </div>
+        <div class="card-footer">
           <a class="btn" href="./hw/4" target="_blank">Відкрити</a>
-        </td>
-      </tr>
+        </div>
+      </div>
 
-      <tr>
-        <td>5.1</td>
-        <td>
-          Робота з Git. Локальний репозиторій. Віддалений репозиторій на GitHub
-        </td>
-        <td>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-num">5.1</span>
+          <span class="card-title"
+            >Робота з Git. Локальний репозиторій. Віддалений репозиторій на
+            GitHub</span
+          >
+        </div>
+        <div class="card-preview card-preview--placeholder">
+          <img
+            src="./img/github.png"
+            alt="GitHub"
+            style="width: 100%; height: 100%; object-fit: cover"
+          />
+        </div>
+        <div class="card-footer">
           <a
             class="btn"
             href="https://github.com/vladislavworkmail1717-dev/salenko-5"
@@ -68,37 +124,78 @@
             target="_blank"
             >Page</a
           >
-        </td>
-      </tr>
+        </div>
+      </div>
 
-      <tr>
-        <td>6.3</td>
-        <td>Таблиця Мондріана</td>
-        <td>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-num">6.3</span>
+          <span class="card-title">Таблиця Мондріана</span>
+        </div>
+        <div class="card-preview">
+          <iframe
+            src="./hw/6"
+            loading="lazy"
+            scrolling="no"
+            tabindex="-1"
+          ></iframe>
+        </div>
+        <div class="card-footer">
           <a class="btn" href="./hw/6" target="_blank">Відкрити</a>
-        </td>
-      </tr>
+        </div>
+      </div>
 
-      <tr>
-        <td>7.1</td>
-        <td>Експерименти з блоковою моделлю</td>
-        <td>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-num">7.1</span>
+          <span class="card-title">Експерименти з блоковою моделлю</span>
+        </div>
+        <div class="card-preview">
+          <iframe
+            src="./hw/7"
+            loading="lazy"
+            scrolling="no"
+            tabindex="-1"
+          ></iframe>
+        </div>
+        <div class="card-footer">
           <a class="btn" href="./hw/7" target="_blank">Відкрити</a>
-        </td>
-      </tr>
+        </div>
+      </div>
 
-      <tr>
-        <td>8.1</td>
-        <td>Закріплюємо Float Layout</td>
-        <td>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-num">8.1</span>
+          <span class="card-title">Закріплюємо Float Layout</span>
+        </div>
+        <div class="card-preview">
+          <iframe
+            src="./hw/8"
+            loading="lazy"
+            scrolling="no"
+            tabindex="-1"
+          ></iframe>
+        </div>
+        <div class="card-footer">
           <a class="btn" href="./hw/8" target="_blank">Відкрити</a>
-        </td>
-      </tr>
+        </div>
+      </div>
 
-      <tr>
-        <td>9.1</td>
-        <td>Розробка "Simple Site" за макетом Figma</td>
-        <td>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-num">9.1</span>
+          <span class="card-title"
+            >Розробка "Simple Site" за макетом Figma</span
+          >
+        </div>
+        <div class="card-preview card-preview--placeholder">
+          <img
+            src="./img/github.png"
+            alt="GitHub"
+            style="width: 100%; height: 100%; object-fit: cover"
+          />
+        </div>
+        <div class="card-footer">
           <a
             class="btn"
             href="https://github.com/vladislavworkmail1717-dev/salenko-9-Simple-Site"
@@ -111,21 +208,44 @@
             target="_blank"
             >Page</a
           >
-        </td>
-      </tr>
+        </div>
+      </div>
 
-      <tr>
-        <td>10.1</td>
-        <td>Адаптація "Simple Site" до респонсивного дизайну</td>
-        <td>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-num">10.1</span>
+          <span class="card-title"
+            >Адаптація "Simple Site" до респонсивного дизайну</span
+          >
+        </div>
+        <div class="card-preview">
+          <iframe
+            src="./hw/10"
+            loading="lazy"
+            scrolling="no"
+            tabindex="-1"
+          ></iframe>
+        </div>
+        <div class="card-footer">
           <a class="btn" href="./hw/10" target="_blank">Відкрити</a>
-        </td>
-      </tr>
+        </div>
+      </div>
 
-      <tr>
-        <td>11.1</td>
-        <td>Рефакторинг "Simple Site" з використанням SCSS</td>
-        <td>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-num">11.1</span>
+          <span class="card-title"
+            >Рефакторинг "Simple Site" з використанням SCSS</span
+          >
+        </div>
+        <div class="card-preview card-preview--placeholder">
+          <img
+            src="./img/github.png"
+            alt="GitHub"
+            style="width: 100%; height: 100%; object-fit: cover"
+          />
+        </div>
+        <div class="card-footer">
           <a
             class="btn"
             href="https://github.com/vladislavworkmail1717-dev/salenko-11"
@@ -138,21 +258,40 @@
             target="_blank"
             >Page</a
           >
-        </td>
-      </tr>
+        </div>
+      </div>
 
-      <tr>
-        <td>12.1</td>
-        <td>Ключові аспекти Flexbox</td>
-        <td>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-num">12.1</span>
+          <span class="card-title">Ключові аспекти Flexbox</span>
+        </div>
+        <div class="card-preview">
+          <iframe
+            src="./hw/12"
+            loading="lazy"
+            scrolling="no"
+            tabindex="-1"
+          ></iframe>
+        </div>
+        <div class="card-footer">
           <a class="btn" href="./hw/12" target="_blank">Відкрити</a>
-        </td>
-      </tr>
+        </div>
+      </div>
 
-      <tr>
-        <td>13.1</td>
-        <td>Мистецтво SVG: фігури та анімація</td>
-        <td>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-num">13.1</span>
+          <span class="card-title">Мистецтво SVG: фігури та анімація</span>
+        </div>
+        <div class="card-preview card-preview--placeholder">
+          <img
+            src="./img/github.png"
+            alt="GitHub"
+            style="width: 100%; height: 100%; object-fit: cover"
+          />
+        </div>
+        <div class="card-footer">
           <a
             class="btn"
             href="https://github.com/vladislavworkmail1717-dev/salenko-13"
@@ -165,13 +304,24 @@
             target="_blank"
             >Page</a
           >
-        </td>
-      </tr>
+        </div>
+      </div>
 
-      <tr>
-        <td>14.1</td>
-        <td>Розробка адаптивного макету з використанням Bootstrap</td>
-        <td>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-num">14.1</span>
+          <span class="card-title"
+            >Розробка адаптивного макету з використанням Bootstrap</span
+          >
+        </div>
+        <div class="card-preview card-preview--placeholder">
+          <img
+            src="./img/github.png"
+            alt="GitHub"
+            style="width: 100%; height: 100%; object-fit: cover"
+          />
+        </div>
+        <div class="card-footer">
           <a
             class="btn"
             href="https://github.com/vladislavworkmail1717-dev/salenko-14"
@@ -184,13 +334,24 @@
             target="_blank"
             >Page</a
           >
-        </td>
-      </tr>
+        </div>
+      </div>
 
-    <tr>
-        <td>15.1</td>
-        <td>Tailwind CSS: від нуля до майстра веб-дизайну</td>
-        <td>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-num">15.1</span>
+          <span class="card-title"
+            >Tailwind CSS: від нуля до майстра веб-дизайну</span
+          >
+        </div>
+        <div class="card-preview card-preview--placeholder">
+          <img
+            src="./img/github.png"
+            alt="GitHub"
+            style="width: 100%; height: 100%; object-fit: cover"
+          />
+        </div>
+        <div class="card-footer">
           <a
             class="btn"
             href="https://github.com/vladislavworkmail1717-dev/salenko-15"
@@ -203,15 +364,22 @@
             target="_blank"
             >Page</a
           >
-        </td>
-      </tr>
+        </div>
+      </div>
 
-
-
-      <tr>
-        <td>17.1</td>
-        <td>Фінальний веб-проєкт</td>
-        <td>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-num">17.1</span>
+          <span class="card-title">Фінальний веб-проєкт</span>
+        </div>
+        <div class="card-preview card-preview--placeholder">
+          <img
+            src="./img/github.png"
+            alt="GitHub"
+            style="width: 100%; height: 100%; object-fit: cover"
+          />
+        </div>
+        <div class="card-footer">
           <a
             class="btn"
             href="https://github.com/vladislavworkmail1717-dev/salenko-17"
@@ -224,25 +392,52 @@
             target="_blank"
             >Page</a
           >
-        </td>
-      </tr>
+        </div>
+      </div>
 
-      <tr>
-        <td>18.1</td>
-        <td>Основи JavaScript: Працюємо зі змінними, типами даних та операторами</td>
-        <td>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-num">18.1</span>
+          <span class="card-title"
+            >Основи JavaScript: Працюємо зі змінними, типами даних та
+            операторами</span
+          >
+        </div>
+        <div class="card-preview">
+          <iframe
+            src="./hw/18"
+            loading="lazy"
+            scrolling="no"
+            tabindex="-1"
+          ></iframe>
+        </div>
+        <div class="card-footer">
           <a class="btn" href="./hw/18" target="_blank">Відкрити</a>
-        </td>
-      </tr>
+        </div>
+      </div>
 
-      <tr>
-        <td>19.1</td>
-        <td>Занурення в JavaScript: Від простих до складних обчислень і рядків</td>
-        <td>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-num">19.1</span>
+          <span class="card-title"
+            >Занурення в JavaScript: Від простих до складних обчислень і
+            рядків</span
+          >
+        </div>
+        <div class="card-preview">
+          <iframe
+            src="./hw/19"
+            loading="lazy"
+            scrolling="no"
+            tabindex="-1"
+          ></iframe>
+        </div>
+        <div class="card-footer">
           <a class="btn" href="./hw/19" target="_blank">Відкрити</a>
-        </td>
-      </tr>
+        </div>
+      </div>
+    </div>
 
-    </table>
+    <footer>Salenko Vladislav</footer>
   </body>
 </html>
