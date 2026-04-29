@@ -1,0 +1,56 @@
+
+/* ///////////////////////// */
+body {
+  margin: 0;
+}
+
+.main {
+  height: 100dvh;
+  display: grid;
+  grid-template:
+    "header" 1fr
+    "navbar" .2fr
+    "main" 4fr
+  ;
+}
+
+@media (width >= 768px) {
+  .main {
+    grid-template:
+       "sidebar header" 1fr
+       "sidebar navbar" .2fr
+       "sidebar main" 4fr
+       / 1fr 4fr
+    ;
+  }
+}
+
+header {
+  background: blue;
+  grid-area: header;
+}
+
+nav {
+  background: yellow;
+  grid-area: navbar;
+}
+
+aside {
+  background: orange;
+  grid-area: sidebar;
+  display: none;
+}
+
+@media (width >= 768px){
+  aside {
+    display: block;
+  }
+}
+
+main {
+  background: gray;
+  grid-area: main;
+}
+
+/* ///////////////////////// */
+
