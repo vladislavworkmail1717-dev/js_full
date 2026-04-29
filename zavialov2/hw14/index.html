@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adaptive Layout</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="menu">
+        <a href="#">Головна</a>
+        <a href="#">Про нас</a>
+        <a href="#">Контакти</a>
+      </nav>
+    </header>
+
+    <div class="container">
+      <aside class="left">
+        <div class="slider">
+          <img src="https://picsum.photos/200/300?1" class="slide active" />
+          <img src="https://picsum.photos/200/300?2" class="slide" />
+          <img src="https://picsum.photos/200/300?3" class="slide" />
+          <img src="https://picsum.photos/200/300?4" class="slide" />
+        </div>
+      </aside>
+
+      <main class="main">
+        <div class="accordion">
+          <div class="item">
+            <button>Розділ 1</button>
+            <div class="content">Контент 1</div>
+          </div>
+          <div class="item">
+            <button>Розділ 2</button>
+            <div class="content">Контент 2</div>
+          </div>
+          <div class="item">
+            <button>Розділ 3</button>
+            <div class="content">Контент 3</div>
+          </div>
+        </div>
+      </main>
+
+      <aside class="right">
+        <form>
+          <label>Ім'я</label>
+          <input type="text" />
+
+          <label>Email</label>
+          <input type="email" />
+
+          <label>Телефон</label>
+          <input type="tel" />
+
+          <label>Пароль</label>
+          <input type="password" />
+
+          <label>Повідомлення</label>
+          <textarea></textarea>
+
+          <button type="submit">Відправити</button>
+        </form>
+      </aside>
+    </div>
+
+    <footer class="footer">© 2026 Мій сайт</footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

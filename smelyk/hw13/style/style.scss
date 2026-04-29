@@ -1,0 +1,158 @@
+.figures {
+  display: inline-flex;
+  gap: 10px;
+}
+
+.square {
+  fill: PaleTurquoise;
+  stroke-width: 5;
+  stroke: Navy;
+}
+
+.square:hover {
+  animation-name: multicolor;
+  animation-duration: 4s;
+}
+
+@keyframes multicolor {
+  0% {
+    fill: #19e320;
+    stroke: black;
+  }
+  33% {
+    fill: #ff0ffb;
+    stroke: red;
+  }
+  66% {
+    fill: #11f6e3;
+    stroke: black;
+  }
+  100% {
+    fill: #f6df11;
+    stroke: red;
+  }
+}
+
+.rectangular {
+  fill: rgb(28, 167, 155);
+  stroke-width: 5;
+  stroke: rgb(7, 64, 80);
+}
+
+.rectangular:hover {
+  animation-name: multicolor-rect;
+  animation-duration: 2s;
+}
+
+@keyframes multicolor-rect {
+  0% {
+    stroke: #19e320;
+    fill: black;
+  }
+  33% {
+    stroke: #ff0ffb;
+    fill: white;
+  }
+  66% {
+    stroke: #11f6e3;
+    fill: black;
+  }
+  100% {
+    stroke: #f6df11;
+    fill: white;
+  }
+}
+
+.circle {
+  stroke: crimson;
+  stroke-width: 5;
+  fill: cornsilk;
+}
+
+.circle:hover {
+  animation-name: multicolor-circle;
+  animation-duration: 2s;
+}
+
+@keyframes multicolor-circle {
+  0% {
+    fill: black;
+  }
+  10% {
+    fill: white;
+  }
+  20% {
+    fill: black;
+  }
+  30% {
+    fill: white;
+  }
+  40% {
+    fill: black;
+  }
+  50% {
+    fill: white;
+  }
+  60% {
+    fill: black;
+  }
+  70% {
+    fill: white;
+  }
+  80% {
+    fill: white;
+  }
+  90% {
+    fill: black;
+  }
+  100% {
+    fill: white;
+  }
+}
+
+.ellips {
+  fill: indigo;
+  stroke: lightblue;
+  stroke-width: 5;
+}
+
+.ellips:hover {
+  animation-name: multicolor-ellips;
+  animation-duration: 3s;
+}
+
+@keyframes multicolor-ellips {
+  0% {
+    fill: rgb(238, 8, 8);
+  }
+  10% {
+    fill: rgb(229, 249, 7);
+  }
+  20% {
+    fill: rgb(108, 242, 6);
+  }
+  30% {
+    fill: rgb(16, 202, 248);
+  }
+  40% {
+    fill: rgb(8, 19, 239);
+  }
+  50% {
+    fill: rgb(179, 9, 246);
+  }
+  60% {
+    fill: rgb(252, 6, 174);
+  }
+  70% {
+    fill: rgb(236, 7, 64);
+  }
+  80% {
+    fill: rgb(106, 247, 59);
+  }
+  90% {
+    fill: rgb(15, 177, 191);
+  }
+  100% {
+    fill: rgb(237, 35, 221);
+  }
+}
