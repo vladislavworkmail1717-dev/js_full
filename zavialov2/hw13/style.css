@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+header {
+  background: #333;
+  color: white;
+  padding: 15px 0;
+  text-align: center;
+}
+
+.promo {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.svg-demo {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.svg-demo svg {
+  border: 1px solid #ccc;
+}
+
+.square {
+  fill: lightblue;
+  stroke: blue;
+  stroke-width: 5;
+}
+
+.rectangle {
+  fill: lightgreen;
+  stroke: green;
+  stroke-width: 5;
+}
+
+.circle {
+  fill: pink;
+  stroke: red;
+  stroke-width: 5;
+  animation: changeColor 2s infinite alternate;
+}
+
+.ellipse {
+  fill: lightyellow;
+  stroke: orange;
+  stroke-width: 5;
+}
+
+@keyframes changeColor {
+  from {
+    fill: pink;
+    stroke: red;
+  }
+  to {
+    fill: purple;
+    stroke: black;
+  }
+}
