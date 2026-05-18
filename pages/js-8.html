@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0 maximum-scale=1.0 minimum-scale=1.0"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Урок js 8</title>
+    <!-- <script src="./js/dz-8.js"></script> -->
+
+    <script src="./js/8/main.js"></script>
+    
+    
+  </head>
+    <body>
+      <H1>Урок js 8</H1>
+      <form action="javascript:alert('hi')">
+        <button type="submit">Save</button>
+      </form>
+      <div id="unique-id" class="unique-id-class" style="width: 100px;height: 100px; background-color: blue;">
+        <div id="child-id">child-id</div>
+        <div id="old-id">old-id</div>
+      </div>
+
+      <div id="unique-id-1" name="name-attribute"></div>
+      
+      <iframe id="myframe" src=""></iframe>
+    </body>
+    <!-- <script>
+      // Припустимо, що у нас є <iframe id="myframe"></iframe> на сторінці
+const iframeElement = document.getElementById('myframe');
+console.log('iframeElement: ', iframeElement, document);  
+
+      
+      // Отримуємо доступ до документа через contentWindow
+        const iframeDocument = iframeElement.contentDocument || iframeElement.contentWindow.document;
+        
+        // Маніпулюємо DOM
+        const iframeBody = iframeDocument.body;
+        if (iframeBody) {
+            iframeBody.style.backgroundColor = 'lightblue';
+        }
+
+        // Зміна контенту в iframe за допомогою JavaScript
+// window.frames['myframe'].document.getElementById('someElement').textContent = 'Новий текст';
+// Зміна адреси документа, що відображається в iframe
+console.log('window.frames[myframe]: ', window.frames['myframe'].location);  
+// window.frames['myframe'].location.href = 'https://example.com';
+
+      </script> -->
+      <script src="./js/dz-8.js"></script>
+</html>
