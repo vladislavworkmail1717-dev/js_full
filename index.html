@@ -38,10 +38,13 @@
             <a href="pages/js-1.html" class="header__link">js-1</a>
           </li>
           <li class="header__item">
-            <a href="pages/js-6.html" class="header__link">js-6</a>
+            <a href="pages/js-8.html" class="header__link">js-8</a>
           </li>
           <li class="header__item">
-            <a href="pages/js-7.html" class="header__link">js-7</a>
+            <a href="pages/js-9.html" class="header__link">js-9</a>
+          </li>
+          <li class="header__item">
+            <a href="pages/js-10.html" class="header__link">js-10</a>
           </li>
         </ul>
       </nav>
@@ -59,10 +62,9 @@
         <button class="promo__button">Learn More</button>
       </section>
       <section class="about container">
-        <h2 class="section__title">List of Us</h2>
+        <h2 class="section__title">Список розробників</h2>
         <p class="section__description"></p>
         <div>
-          <p>Це список розробників:</p>
           <ul>
             <li>
               <a
@@ -100,4 +102,17 @@
       <p class="footer__copy">&copy; 2026. All rights reserved.</p>
     </footer>
   </body>
+  <script>
+    const menuButton = document.querySelector(".promo__button");
+    menuButton.addEventListener("click", () => {
+      alert("You clicked the button!");
+    });
+
+    document.addEventListener("contextmenu", function (event) {
+      event.preventDefault(); // Отключаем стандартное меню браузера
+      console.log("Клик правой кнопкой мыши!");
+
+      // Здесь можно вызвать вашу функцию, например, отрисовку кастомного меню
+    });
+  </script>
 </html>
