@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-9" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0 maximum-scale=1.0 minimum-scale=1.0"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Урок js 9</title>
+
+    <script src="./js/9/main.js"></script>
+    <style>
+    
+      .modal {
+        position: absolute;
+        z-index: 1000;
+        display: none;
+        margin: 0 auto;
+        min-height: 200px;
+        width: 50%;
+        height: 50vh;
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+
+      .show {
+        display: block;
+      }
+
+      .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 24px;
+        height: 24px;
+        border: 2px solid #777777;
+        text-align: center;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      td select,
+      td input {
+        width: 150px;
+      }
+
+      label {
+        display: block;
+      }
+
+      .error input,
+      .error textarea {
+        border: 1px solid red;
+      }
+
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Урок js 9</h1>
+    <form id="myForm" action="https://example.com/submit" method="POST">
+      <input
+        type="text"
+        placeholder="Enter your name"
+        onfocus="javascript: console.log('Button focused!');"
+      />
+      <input type="text" placeholder="Enter your name" />
+      <button onclick="alert('Привіт!')">Натисни мене</button>
+      <button id="myButton">button</button>
+      <button type="submit">Save</button>
+    </form>
+    <div
+      id="parentDiv"
+      style="width: 200px; height: 200px; background-color: lightblue"
+    >
+      <div
+        id="childDiv"
+        style="width: 100px; height: 100px; background-color: lightcoral"
+      >
+        Child Div
+      </div>
+    </div>
+
+    <ul id="myList">
+      <li>Пункт 1</li>
+      <li>Пункт 2</li>
+      <li>Пункт 3</li>
+    </ul>
+
+    <button id="modalButton">Show modal!</button>
+
+    <div id="modal" class="modal">
+      <div id="close" class="close">&times;</div>
+    </div>
+
+    <form>
+      <table>
+        <tr>
+          <td>Від кого</td>
+          <td>
+            <input name="from" type="text" />
+          </td>
+        </tr>
+        <tr>
+          <td>Ваш пароль</td>
+          <td>
+            <input name="password" type="password" />
+          </td>
+        </tr>
+        <tr>
+          <td>Повторіть пароль</td>
+          <td>
+            <input name="password2" type="password" />
+          </td>
+        </tr>
+        <tr>
+          <td>Куди</td>
+          <td>
+            <select name="to">
+              <option></option>
+              <option value="1">Відділ постачання</option>
+              <option value="2">Відділ розробки</option>
+              <option value="3">Директору</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+
+      Повідомлення:
+      <label>
+        <textarea
+          name="message"
+          style="display: block; width: 400px; height: 80px"
+        ></textarea>
+      </label>
+
+      <input type="button" onclick="validate(this.form)" value="Перевірити" />
+    </form>
+
+    <script>
+      // document.addEventListener("mousemove", function (event) {
+      //   console.log(`Mouse X: ${event.clientX}, Mouse Y: ${event.clientY}`);
+      // });
+
+      const formButton = document.querySelector("#myForm");
+      formButton.addEventListener("submit", () => {
+        event.preventDefault();
+        alert("You submitted the form!");
+      });
+      const button = document.getElementById("myButton");
+      button.onclick = function () {
+        alert("Привіт!");
+      };
+
+      const handleClick = function () {
+        alert("Привіт!");
+      };
+      button.addEventListener("click", handleClick);
+      // Щоб видалити обробник, використовуємо:
+      button.removeEventListener("click", handleClick);
+
+      // Використовуємо addEventListener для призначення обробника події
+      button.addEventListener("click", function (event) {
+        // Виводимо об'єкт події в консоль
+        console.log(event);
+
+        // Отримуємо тип події
+        console.log("Тип події:", event.type);
+
+        // Отримуємо елемент, на якому відбулася подія
+        console.log("Цільовий елемент:", event.target);
+
+        // Використовуємо preventDefault, щоб запобігти стандартній дії браузера
+        // Наприклад, не переходити за посиланням, якщо цільовий елемент є <a>
+        event.preventDefault();
+
+        // Показуємо повідомлення
+        alert("Кнопка була натиснута!");
+      });
+      ////////////////////
+      const modal = document.querySelector(".modal");
+      const showBtn = document.querySelector("#modalButton");
+      const closeBtn = document.querySelector(".close");
+
+      const show = function () {
+        modal.classList.add("show");
+      };
+
+      const close = function () {
+        modal.classList.remove("show");
+      };
+
+      const closeFromKey = function (e) {
+        if (e.keyCode === 27) {
+          modal.classList.remove("show");
+        }
+      };
+
+      showBtn.addEventListener("click", show);
+      closeBtn.addEventListener("click", close);
+      document.addEventListener("keydown", closeFromKey);
+
+      /////////////////////
+      function showError(container, errorMessage) {
+        container.className = "error";
+        let msgElem = document.createElement("span");
+        msgElem.className = "error-message";
+        msgElem.innerHTML = errorMessage;
+        container.appendChild(msgElem);
+      }
+
+      function resetError(container) {
+        container.className = "";
+        if (container.lastChild.className == "error-message")
+          container.removeChild(container.lastChild);
+      }
+
+      function validate(form) {
+        console.log("Валідація форми...", form.elements);
+        let elems = form.elements;
+        resetError(elems.from.parentNode);
+        if (!elems.from.value)
+          showError(elems.from.parentNode, " Вкажіть від кого.");
+        resetError(elems.password.parentNode);
+        if (!elems.password.value)
+          showError(elems.password.parentNode, " Вкажіть пароль.");
+        else if (elems.password.value != elems.password2.value)
+          showError(elems.password.parentNode, " Паролі не співпадають.");
+        resetError(elems.to.parentNode);
+        if (!elems.to.value) showError(elems.to.parentNode, " Вкажіть, куди.");
+        resetError(elems.message.parentNode);
+        if (!elems.message.value)
+          showError(elems.message.parentNode, " Відсутній текст.");
+      }
+    </script>
+    <script src="./js/dz-9.js"></script>
+  </body>
+</html>

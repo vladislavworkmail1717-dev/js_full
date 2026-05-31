@@ -1,0 +1,56 @@
+body {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #f3f4f6 0%, #dbe4f0 100%);
+    font-family: Arial, sans-serif;
+    color: #1f2937;
+}
+
+.custom-navbar {
+    background: linear-gradient(135deg, #2563eb, #4f46e5);
+}
+
+.box {
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+    padding: 16px;
+    background: #FFF;
+}
+
+.slider-image {
+    height: 500px;
+    object-fit: cover;
+}
+
+.accordion-button:not(.collapsed) {
+    background: #2563eb;
+    color: white;
+}
+
+.form-control,
+.form-select {
+    border-radius: 12px;
+}
+
+.btn {
+    border-radius: 12px;
+}
+
+footer {
+    text-align: center;
+}
+
+@media (max-width: 991px) {
+    .slider-image {
+        height: 400px;
+    }
+}
+
+@media (max-width: 767px) {
+    .box {
+        padding: 18px;
+    }
+
+    .slider-image {
+        height: 320px;
+    }
+}

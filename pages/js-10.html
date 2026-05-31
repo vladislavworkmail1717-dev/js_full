@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-10" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0 maximum-scale=1.0 minimum-scale=1.0"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..1000;1,100..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Урок js 10</title>
+
+    <style>
+      .slider-container {
+        position: relative;
+        width: 800px;
+        max-width: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+
+      .slider-track {
+        display: flex;
+        transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.104);
+        will-change: transform;
+      }
+
+      .slide {
+        min-width: 100%;
+        box-sizing: border-box;
+      }
+
+      .slide img {
+        width: 100%;
+        display: block;
+      }
+
+      .nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        border: none;
+        padding: 1rem;
+        cursor: pointer;
+      }
+
+      .prev {
+        left: 10px;
+      }
+      .next {
+        right: 10px;
+      }
+    </style>
+    <script>
+      // ==========================================
+      // 1. Pure State-Transition Logic Functions
+      // ==========================================
+
+      /**
+       * Calculates the next valid slide index based on structural boundaries.
+       * @param {number} currentIndex
+       * @param {number} totalSlides
+       * @param {number} direction - (1 for next, -1 for previous)
+       * @returns {number} New index
+       */
+
+      const calculateNextIndex = (currentIndex, totalSlides, direction) => {
+        const nextIndex = currentIndex + direction;
+        if (nextIndex >= totalSlides) return 0;
+        if (nextIndex < 0) return totalSlides - 1;
+        return nextIndex;
+      };
+
+      /**
+       * Purely transitions slider state to a new immutable state object.
+       * @param {Object} state - Current slider state
+       * @param {number} direction - Movement direction
+       * @returns {Object} Fresh state copy
+       */
+      const moveSlider = (state, direction) => ({
+        ...state,
+        currentIndex: calculateNextIndex(
+          state.currentIndex,
+          state.totalSlides,
+          direction,
+        ),
+      });
+
+      // ==========================================
+      // 2. Impure/I/O Side-Effect Side (DOM Wrapper)
+      // ==========================================
+
+      /**
+       * Directly updates DOM nodes based on given state configurations.
+       * @param {HTMLElement} trackElement
+       * @param {Object} state
+       */
+      const render = (trackElement, state) => {
+        const translationValue = state.currentIndex * -100;
+        trackElement.style.transform = `translateX(${translationValue}%)`;
+      };
+
+      /**
+       * Initializes and manages state mutations over time using closures.
+       * @param {string} sliderId
+       */
+      const createSlider = (sliderId) => {
+        const container = document.getElementById(sliderId);
+        if (!container) return;
+
+        const track = container.querySelector(".slider-track");
+        const prevBtn = container.querySelector(".prev");
+        const nextBtn = container.querySelector(".next");
+
+        // Localized, isolated initial slider state configuration
+        let state = {
+          currentIndex: 0,
+          totalSlides: container.querySelectorAll(".slide").length,
+        };
+
+        // State modifier function processing pipeline
+        const updateState = (direction) => {
+          state = moveSlider(state, direction); // Compute next state purely
+          render(track, state); // Map new data directly to UI
+        };
+
+        // Assign isolated event listeners
+        prevBtn.addEventListener("click", () => updateState(-1));
+        nextBtn.addEventListener("click", () => updateState(1));
+
+        // Render initial static position layout
+        render(track, state);
+      };
+
+      // Fire initialization routine on DOM load safely
+      window.addEventListener("DOMContentLoaded", () => {
+        getSliderImages().then((images) => {
+          console.log("Отримані зображення:", images);
+          createSlider("my-slider");
+        });
+        
+      });
+
+      /////
+      async function getSliderImages() {
+        // Використовуємо безкоштовний API CoinGecko
+        const url = `https://api.thecatapi.com/v1/images/search?limit=10`;
+
+        try {
+          const response = await fetch(url);
+           if (!response.ok) {
+            throw new Error(`Помилка мережі: ${response.status}`);
+          }
+          const sliderImages = await response.json();
+          const containerSlider = document.getElementById("slider-track");
+          containerSlider.innerHTML = "";
+
+          sliderImages.forEach((cat) => {
+            const card = document.createElement("div");
+            card.classList.add("slide");
+
+            const img = document.createElement("img");
+            img.src = cat.url;
+            img.alt = "A cute cat";
+
+            card.appendChild(img);
+            containerSlider.appendChild(card);
+          });
+        } catch (error) {
+          console.error("Error fetching data:", error);
+          containerSlider.innerHTML = "<p>Failed to load cat images.</p>";
+        }
+      }
+
+      // Виклик функції
+    </script>
+  </head>
+  <body>
+    <div class="slider-container" id="my-slider">
+      <div class="slider-track" id="slider-track">
+        <!-- <div class="slide">
+          <img src="https://picsum.photos/200/300" alt="Slide 1" />
+        </div>
+        <div class="slide">
+          <img src="https://picsum.photos/300/300" alt="Slide 2" />
+        </div>
+        <div class="slide">
+          <img src="https://picsum.photos/400/300" alt="Slide 3" />
+        </div>
+        <div class="slide">
+          <img src="https://picsum.photos/200/300" alt="Slide 4" />
+        </div>
+        <div class="slide">
+          <img src="https://picsum.photos/300/300" alt="Slide 5" />
+        </div> -->
+      </div>
+      <button class="nav-btn prev">◀</button>
+      <button class="nav-btn next">▶</button>
+    </div>
+  </body>
+</html>

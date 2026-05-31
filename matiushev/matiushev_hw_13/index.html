@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG-Orbital System</title>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        background: radial-gradient(circle at center, #0f2027, #000);
+      }
+
+      svg {
+        width: 100vw;
+        height: 100vh;
+        display: block;
+      }
+
+      /* Орбіти */
+      .orbit {
+        fill: none;
+        stroke: rgba(255, 255, 255, 0.1);
+        stroke-dasharray: 4 8;
+      }
+
+      /* Загальне світіння */
+      .glow {
+        filter: drop-shadow(0 0 15px currentColor);
+      }
+
+      #sunGlow + circle,
+      [fill="url(#sunGlow)"] {
+        filter: blur(10px);
+        pointer-events: none;
+      }
+
+      /* Контур кола */
+      .stroke-circle {
+        stroke: white;
+        stroke-width: 3;
+      }
+
+      /* Контур квадрата */
+      .stroke-square {
+        stroke: rosybrown;
+        stroke-width: 4;
+      }
+
+      /* Контур еліпса */
+      .stroke-ellipse {
+        stroke: #26d9ed;
+        stroke-width: 2;
+        animation: colorChange 4s infinite ease-in-out;
+      }
+
+      /* Анімація зміни кольору еліпса */
+      @keyframes colorChange {
+        0% {
+          fill: #ff6b6b; 
+          stroke: #26d9ed;
+        }
+        50% {
+          fill: #feca16; 
+          stroke: #ffffff; 
+        }
+        100% {
+          fill: #ff6b6b; 
+          stroke: #26d9ed;
+        }
+      }
+
+      /* Контур прямокутника */
+      .stroke-rectangle {
+        stroke: grey;
+        stroke-width: 5;
+      }
+
+      /* Анімація обертання */
+      .rotateSlow {
+        transform-origin: center;
+        animation: spin 20s linear infinite;
+      }
+
+      /* Анімація обертання */
+      .rotateMedium {
+        transform-origin: center;
+        animation: spin 12s linear infinite;
+      }
+
+      /* Анімація обертання */
+      .rotateFast {
+        transform-origin: center;
+        animation: spinReverse 6s linear infinite;
+      }
+
+      /* Обертанння за годинниковою стрілкою */
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Обертання проти годинникової стрілки */
+      @keyframes spinReverse {
+        from {
+          transform: rotate(360deg);
+        }
+        to {
+          transform: rotate(0deg);
+        }
+      }
+
+      /* Пульсація "зірки" */
+      .pulse {
+        transform-origin: 400px 400px;
+        animation: pulse 3s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+         transform: scale(1);
+         opacity: 1;
+        }
+        50% {
+          transform: scale(1.4);
+          opacity: 0.8;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <svg viewBox="0 0 800 800">
+      <defs>
+        <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="rgba(255, 221, 89, 0.6)" />
+          <stop offset="100%" stop-color="rgba(255, 221, 89, 0)" />
+        </radialGradient>
+      </defs>
+      <!-- Центр -->
+
+      <g style="transform-origin: 400px 400px">
+        <!-- Ореал -->
+        <circle
+          cx="400"
+          cy="400"
+          r="50"
+          fill="url(#sunGlow)"
+          class="pulse"
+          style="animation-duration: 4s"
+        />
+
+        <!-- Ядро -->
+        <circle
+          cx="400"
+          cy="400"
+          r="20"
+          fill="#ffdd59"
+          class="glow pulse stroke-circleCenter"
+        />
+      </g>
+
+      <!-- Орбіти -->
+      <circle cx="400" cy="400" r="120" class="orbit" />
+      <circle cx="400" cy="400" r="200" class="orbit" />
+      <circle cx="400" cy="400" r="300" class="orbit" />
+
+      <!-- Повільна орбіта -->
+      <g class="rotateSlow">
+        <circle
+          cx="400"
+          cy="100"
+          r="18"
+          fill="#1dd1a1"
+          class="glow stroke-circle"
+        />
+      </g>
+
+      <!-- Середня орбіта -->
+      <g class="rotateMedium">
+        <rect
+          x="390"
+          y="190"
+          width="20"
+          height="20"
+          fill="#54a0ff"
+          class="glow stroke-square"
+        />
+      </g>
+
+      <!-- Швидка орбіта -->
+      <g class="rotateFast">
+        <ellipse
+          cx="400"
+          cy="280"
+          rx="25"
+          ry="15"
+          fill="#ff6b6b"
+          class="glow stroke-ellipse"
+        />
+      </g>
+
+      <!-- Додатковий об'єкт -->
+      <g class="rotateMedium">
+        <rect
+          x="390"
+          y="590"
+          width="40"
+          height="20"
+          fill="#feca16"
+          class="glow stroke-rectangle"
+        />
+      </g>
+    </svg>
+  </body>
+</html>

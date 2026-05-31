@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Work 15 | Adaptive Layout</title>
+  <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+  >
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+<div class="container py-4">
+  <header class="box mb-4">
+    <div class="d-flex flex-column gap-4">
+      <div class="text-center">
+        <h1 class="fw-bold mb-0">HEADER</h1>
+      </div>
+
+      <nav class="navbar navbar-expand-lg navbar-dark custom-navbar rounded-4">
+        <div class="container-fluid">
+          <a class="navbar-brand fw-bold" href="#">MySite</a>
+
+          <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#mainMenu"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="mainMenu">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Home</a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                >
+                  Categories
+                </a>
+
+                <ul class="dropdown-menu z-3">
+                  <li>
+                    <a class="dropdown-item" href="#">HTML</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">CSS</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Bootstrap</a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contacts</a>
+              </li>
+            </ul>
+
+            <div class="d-flex gap-2">
+              <button class="btn btn-light">Login</button>
+              <button class="btn btn-warning">Register</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="row g-4">
+    <aside class="col-12 col-md-4 col-lg-3">
+      <section class="box h-100">
+        <h2 class="mb-4 text-center">LEFT</h2>
+
+        <div
+            id="sliderExample"
+            class="carousel slide"
+            data-bs-ride="carousel"
+        >
+          <div class="carousel-inner rounded-4 overflow-hidden">
+            <div class="carousel-item active">
+              <img
+                  src="https://picsum.photos/id/1011/400/600"
+                  class="d-block w-100 slider-image"
+                  alt="Slide"
+              />
+            </div>
+
+            <div class="carousel-item">
+              <img
+                  src="https://picsum.photos/id/1025/400/600"
+                  class="d-block w-100 slider-image"
+                  alt="Slide"
+              />
+            </div>
+
+            <div class="carousel-item">
+              <img
+                  src="https://picsum.photos/id/1035/400/600"
+                  class="d-block w-100 slider-image"
+                  alt="Slide"
+              />
+            </div>
+
+            <div class="carousel-item">
+              <img
+                  src="https://picsum.photos/id/1043/400/600"
+                  class="d-block w-100 slider-image"
+                  alt="Slide"
+              />
+            </div>
+          </div>
+
+          <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#sliderExample"
+              data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+
+          <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#sliderExample"
+              data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </section>
+    </aside>
+
+    <section class="col-12 col-md-8 col-lg-6">
+      <div class="box h-100">
+        <h2 class="mb-4 text-center">MAIN</h2>
+
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+              >
+                Хто такий Scorpion?
+              </button>
+            </h2>
+
+            <div
+                id="collapseOne"
+                class="accordion-collapse collapse show"
+                data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                Scorpion - один із найвідоміших персонажів Mortal Kombat.
+                Його фраза <strong>"Get over here!"</strong> стала культовою
+                серед фанатів гри.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo"
+              >
+                Sub-Zero та його сили
+              </button>
+            </h2>
+            <div
+                id="collapseTwo"
+                class="accordion-collapse collapse"
+                data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                Sub-Zero володіє силою льоду та може заморожувати ворогів.
+                Він є одним із головних суперників Scorpion у всесвіті
+                Mortal Kombat.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="col-12 col-lg-3">
+      <section class="box h-100">
+        <h2 class="mb-4 text-center">RIGHT</h2>
+
+        <form class="d-flex flex-column gap-3">
+          <div>
+            <label class="form-label" for="name">Name</label>
+            <input
+                class="form-control"
+                type="text"
+                id="name"
+                placeholder="Enter your name"
+            />
+          </div>
+
+          <div>
+            <label class="form-label" for="email">Email</label>
+            <input
+                class="form-control"
+                type="email"
+                id="email"
+                placeholder="example@gmail.com"
+            />
+          </div>
+
+          <div>
+            <label class="form-label" for="phone">Phone</label>
+            <input
+                class="form-control"
+                type="tel"
+                id="phone"
+                placeholder="+380..."
+            />
+          </div>
+
+          <div>
+            <label class="form-label" for="character">Choose your character</label>
+
+            <select class="form-select" id="character">
+              <option>Sub Zero</option>
+              <option>Kung Lao</option>
+              <option>Scorpion</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="form-label" for="message">Message</label>
+
+            <textarea
+                class="form-control"
+                id="message"
+                rows="4"
+            ></textarea>
+          </div>
+
+          <div class="d-flex gap-2">
+            <button class="btn btn-primary w-100" type="submit">
+              Submit
+            </button>
+
+            <button class="btn btn-outline-secondary w-100" type="reset">
+              Clear
+            </button>
+          </div>
+        </form>
+      </section>
+    </aside>
+  </main>
+
+  <footer class="box mt-4 text-center">
+    <h2>FOOTER</h2>
+  </footer>
+</div>
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+></script>
+</body>
+</html>

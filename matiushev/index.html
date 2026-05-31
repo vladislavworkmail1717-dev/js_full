@@ -2,143 +2,262 @@
 <html lang="uk">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Мої домашні завдання</title>
-    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Загальні стилі для темної теми з градієнтом */
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        /* Глибокий нічний градієнт */
+        background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+        background-attachment: fixed;
+        color: #cbd5e1; /* Світло-сірий текст для комфортного читання */
+        margin: 0;
+        padding: 40px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      h1 {
+        color: #f8fafc;
+        font-size: 2rem;
+        margin-bottom: 30px;
+        text-align: center;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Таблиця у стилі "темного скла" */
+      table {
+        width: 100%;
+        max-width: 900px;
+        border-collapse: separate;
+        border-spacing: 0;
+        background-color: rgba(30, 41, 59, 0.45); /* Напівпрозорий темний фон */
+        backdrop-filter: blur(12px); /* Ефект розмиття */
+        -webkit-backdrop-filter: blur(12px);
+        border-radius: 16px;
+        box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+        margin-bottom: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      th, td {
+        padding: 18px 24px;
+        text-align: left;
+      }
+
+      th {
+        background-color: rgba(15, 23, 42, 0.6);
+        color: #94a3b8;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        letter-spacing: 0.07em;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      /* Плавний ефект підсвічування рядка */
+      tr {
+        transition: background-color 0.2s ease;
+      }
+
+      tr:not(:last-child) td {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      }
+
+      tr:hover td {
+        background-color: rgba(255, 255, 255, 0.03);
+      }
+
+      /* Стилізація номерів завдань */
+      td:first-child {
+        font-weight: 600;
+        color: #38bdf8; /* Естетичний блакитний акцент для номерів */
+        width: 60px;
+      }
+
+      /* Інтерактивні кнопки-бейджі */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 6px 16px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: all 0.25s ease;
+        text-align: center;
+        min-width: 90px;
+      }
+
+      /* Виконане завдання (Контрастний смарагдовий з неоновим ховером) */
+      .btn-success {
+        background-color: rgba(16, 185, 129, 0.15);
+        color: #34d399;
+        border: 1px solid rgba(52, 211, 153, 0.3);
+      }
+
+      .btn-success:hover {
+        background-color: #10b981;
+        color: #0f172a;
+        border-color: #10b981;
+        box-shadow: 0 0 20px rgba(16, 185, 129, 0.4); /* Неонове світіння */
+        transform: translateY(-1px);
+      }
+
+      /* Відсутнє завдання (Приглушений темний бейдж) */
+      .btn-missing {
+        background-color: rgba(255, 255, 255, 0.03);
+        color: #64748b;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        pointer-events: none;
+        cursor: not-allowed;
+      }
+
+      /* Підвал сторінки */
+      .footer__container {
+        text-align: center;
+        margin-top: auto;
+        padding-top: 24px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        width: 100%;
+        max-width: 900px;
+      }
+
+      .footer__name {
+        margin: 0 0 4px 0;
+        color: #94a3b8;
+        font-size: 0.95rem;
+        font-weight: 600;
+      }
+
+      .footer__copy {
+        margin: 0;
+        color: #475569;
+        font-size: 0.85rem;
+      }
+    </style>
   </head>
 
   <body>
     <h1>Мої домашні завдання</h1>
 
     <table>
-      <tr>
-        <th>№</th>
-        <th>Назва</th>
-        <th>Посилання</th>
-      </tr>
-
-      <tr>
-        <td>1.1</td>
-        <td>
-          Практичний вступ до HTML: налаштування VSCode та створення сторінки
-        </td>
-        <td>
-          <a class="btn red" href="#" target="_blank">Відсутнє</a>
-        </td>
-      </tr>
-
-      <tr>
-        <td>2.1</td>
-        <td>Створення структури багатосторінкового веб-сайту</td>
-        <td>
-          <a class="btn red" href="#" target="_blank">Відсутнє</a>
-        </td>
-      </tr>
-
-      <tr>
-        <td>3.1</td>
-        <td>Візуальне оформлення багатосторінкового веб-сайту</td>
-        <td>
-          <a class="btn red" href="#" target="_blank">Відсутнє</a>
-        </td>
-      </tr>
-
-      <tr>
-        <td>4.1</td>
-        <td>Селектори CSS, специфічність селекторів</td>
-        <td>
-          <a class="btn red" href="#" target="_blank">Відсутнє</a>
-        </td>
-      </tr>
-
-      <tr>
-        <td>5.1</td>
-        <td>
-          Робота з Git. Локальний репозиторій. Віддалений репозиторій на GitHub
-        </td>
-        <td>
-          <a class="btn red" href="#" target="_blank">Відсутнє</a>
-        </td>
-      </tr>
-
-      <tr>
-        <td>6.3</td>
-        <td>Таблиця Мондріана</td>
-        <td>
-          <a class="btn" href="./matiushev_hw_6/index.html" target="_blank">Відкрити</a>
-        </td>
-      </tr>
-
-      <tr>
-        <td>7.1</td>
-        <td>Експерименти з блоковою моделлю</td>
-        <td>
-          <a class="btn" href="./matiushev_homework_7/index.html" target="_blank">Відкрити</a>
-        </td>
-      </tr>
-
-      <tr>
-        <td>8.1</td>
-        <td>Закріплюємо Float Layout</td>
-        <td>
-          <a class="btn" href="./matiushev_hw_8/index.html" target="_blank">Відкрити</a>
-        </td>
-      </tr>
-
-      <tr>
-        <td>9.1</td>
-        <td>Розробка "Simple Site" за макетом Figma</td>
-        <td>
-          <a class="btn" href="./matiushev_hw_9/index.html" target="_blank">Відкрити</a>
-        </td>
-      </tr>
-
-      <tr>
-        <td>10.1</td>
-        <td>Адаптація "Simple Site" до респонсивного дизайну</td>
-        <td>
-          <a class="btn" href="./matiushev_hw_10/index.html" target="_blank">Відкрити</a>
-        </td>
-      </tr>
-
-      <tr>
-        <td>11.1</td>
-        <td>Рефакторинг "Simple Site" з використанням SCSS</td>
-        <td>
-          <a class="btn" href="./matiushev_hw_11/index.html" target="_blank">Відкрити</a>
-        </td>
-      </tr>
-
-      <tr>
-        <td>12.1</td>
-        <td>Ключові аспекти Flexbox</td>
-        <td>
-          <a class="btn red" href="#" target="_blank">Відсутнє</a>
-        </td>
-      </tr>
-
-      <tr>
-        <td>13.1</td>
-        <td>Мистецтво SVG: фігури та анімація</td>
-        <td>
-          <a class="btn red" href="#" target="_blank">Відсутнє</a>
-        </td>
-      </tr>
-
-      <tr>
-        <td>14.1</td>
-        <td>Розробка адаптивного макету з використанням Bootstrap</td>
-        <td>
-          <a class="btn red" href="#" target="_blank">Відсутнє</a>
-        </td>
-      </tr>
-
-      <tr>
-        <td>15.1</td>
-        <td>Tailwind CSS: від нуля до майстра веб-дизайну</td>
-        <td>
-          <a class="btn red" href="#" target="_blank">Відсутнє</a>
-        </td>
-      </tr>
+      <thead>
+        <tr>
+          <th>№</th>
+          <th>Назва завдання</th>
+          <th>Статус / Посилання</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1.1</td>
+          <td>Практичний вступ до HTML: налаштування VSCode та створення сторінки</td>
+          <td><span class="btn btn-missing">Відсутнє</span></td>
+        </tr>
+        <tr>
+          <td>2.1</td>
+          <td>Створення структури багатосторінкового веб-сайту</td>
+          <td><span class="btn btn-missing">Відсутнє</span></td>
+        </tr>
+        <tr>
+          <td>3.1</td>
+          <td>Візуальне оформлення багатосторінкового веб-сайту</td>
+          <td><span class="btn btn-missing">Відсутнє</span></td>
+        </tr>
+        <tr>
+          <td>4.1</td>
+          <td>Селектори CSS, специфічність селекторів</td>
+          <td><span class="btn btn-missing">Відсутнє</span></td>
+        </tr>
+        <tr>
+          <td>5.1</td>
+          <td>Робота з Git. Локальний репозиторій. Віддалений репозиторій на GitHub</td>
+          <td><span class="btn btn-missing">Відсутнє</span></td>
+        </tr>
+        <tr>
+          <td>6.3</td>
+          <td>Таблиця Мондріана</td>
+          <td><a class="btn btn-success" href="./matiushev_hw_6/index.html" target="_blank">Відкрити</a></td>
+        </tr>
+        <tr>
+          <td>7.1</td>
+          <td>Експерименти з блоковою моделлю</td>
+          <td><a class="btn btn-success" href="./matiushev_hw_7/index.html" target="_blank">Відкрити</a></td>
+        </tr>
+        <tr>
+          <td>8.1</td>
+          <td>Закріплюємо Float Layout</td>
+          <td><a class="btn btn-success" href="./matiushev_hw_8/index.html" target="_blank">Відкрити</a></td>
+        </tr>
+        <tr>
+          <td>9.1</td>
+          <td>Розробка "Simple Site" за макетом Figma</td>
+          <td><a class="btn btn-success" href="./matiushev_hw_9/index.html" target="_blank">Відкрити</a></td>
+        </tr>
+        <tr>
+          <td>10.1</td>
+          <td>Адаптація "Simple Site" до респонсивного дизайну</td>
+          <td><a class="btn btn-success" href="./matiushev_hw_10/index.html" target="_blank">Відкрити</a></td>
+        </tr>
+        <tr>
+          <td>11.1</td>
+          <td>Рефакторинг "Simple Site" з використанням SCSS</td>
+          <td><a class="btn btn-success" href="./matiushev_hw_11/index.html" target="_blank">Відкрити</a></td>
+        </tr>
+        <tr>
+          <td>12.1</td>
+          <td>Ключові аспекти Flexbox</td>
+          <td><span class="btn btn-missing">Відсутнє</span></td>
+        </tr>
+        <tr>
+          <td>13.1</td>
+          <td>Мистецтво SVG: фігури та анімація</td>
+          <td><a class="btn btn-success" href="./matiushev_hw_13/index.html" target="_blank">Відкрити</a></td>
+        </tr>
+        <tr>
+          <td>14.1</td>
+          <td>Розробка адаптивного макету з використанням Bootstrap</td>
+          <td><span class="btn btn-missing">Відсутнє</span></td>
+        </tr>
+        <tr>
+          <td>15.1</td>
+          <td>Tailwind CSS: від нуля до майстра веб-дизайну</td>
+          <td><span class="btn btn-missing">Відсутнє</span></td>
+        </tr>
+        <tr>
+          <td>16.1</td>
+          <td>Ключові аспекти CSS Grid</td>
+          <td><span class="btn btn-missing">Відсутнє</span></td>
+        </tr>
+        <tr>
+          <td>17.1</td>
+          <td>Фінальний веб-проєкт</td>
+          <td><span class="btn btn-missing">Відсутнє</span></td>
+        </tr>
+        <tr>
+          <td>18.1</td>
+          <td>Основи JavaScript: Працюємо зі змінними, типами даних та операторами</td>
+          <td><a class="btn btn-success" href="./matiushev_hw_18/index.html" target="_blank">Відкрити</a></td>
+        </tr>
+        <tr>
+          <td>19.1</td>
+          <td>Занурення в JavaScript: Від простих до складних обчислень і рядків</td>
+          <td><a class="btn btn-success" href="./matiushev_hw_19/index.html" target="_blank">Відкрити</a></td>
+        </tr>
+        <tr>
+          <td>20.1</td>
+          <td>Основи JavaScript: Функції, умовні оператори, та callback-и</td>
+          <td><a class="btn btn-success" href="./matiushev_hw_20/index.html" target="_blank">Відкрити</a></td>
+        </tr>
+      </tbody>
     </table>
 
     <footer class="footer__container">
