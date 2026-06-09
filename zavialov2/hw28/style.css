@@ -1,0 +1,40 @@
+body {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+img {
+  width: 600px;
+  height: 300px;
+  object-fit: cover;
+}
+
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#dots {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: gray;
+  cursor: pointer;
+}
+
+.active {
+  background: red;
+}
