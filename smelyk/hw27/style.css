@@ -1,0 +1,75 @@
+.slider {
+  position: relative;
+  width: 500px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slider img {
+  width: 100%;
+  display: none;
+}
+
+img.displaySlide {
+  display: block;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+.btn {
+  position: absolute;
+  background-color: rgba(114, 114, 195, 0.655);
+  color: whitesmoke;
+  opacity: 0.7;
+  cursor: pointer;
+  border: 1px solid navy;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.slider-btn {
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px 5px;
+  font-size: 1.5rem;
+}
+
+.previous-btn {
+  left: 0;
+}
+
+.next-btn {
+  right: 0;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.slider-inicators {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 15px;
+}
+
+.slider-inicators span {
+  cursor: pointer;
+  margin: 0 4px;
+  height: 8px;
+  background: white;
+}
+
+.control-btn {
+  font-size: 16px;
+  right: 10px;
+  bottom: 15px;
+}

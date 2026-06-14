@@ -1,0 +1,34 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./style.css" rel="stylesheet">
+    <script src="./main.js" defer></script>
+    <title>Slider</title>
+</head>
+
+<body>
+    <div class="slider">
+        <div class="slide-items">
+            <img class="slide" src="./images/1.jpg" alt="Cat sitting on a bed.">
+            <img class="slide" src="./images/2.jpg" alt="Cat peeking from a corner.">
+            <img class="slide" src="./images/3.jpg" alt="Cat mewing.">
+            <img class="slide" src="./images/4.jpg" alt="Cat stretching.">
+            <img class="slide" src="./images/5.jpg" alt="Cat looking to the side.">
+        </div>
+        <button class="previous-btn slider-btn btn" onclick="previousSlide()">&#10094;</button>
+        <button class="next-btn slider-btn btn" onclick="nextSlide()">&#10095;</button>
+        <div class="slider-inicators">
+            <span onclick="moveTo(0)"></span>
+            <span onclick="moveTo(1)"></span>
+            <span onclick="moveTo(2)"></span>
+            <span onclick="moveTo(3)"></span>
+            <span onclick="moveTo(4)"></span>
+        </div>
+        <button class="play-btn control-btn btn" onclick="playSlides()">&#9658;</button>
+        <button class="pause-btn control-btn btn" onclick="pauseSlides()">&#10074;&#10074;</button>
+    </div>
+</body>
+
+</html>
