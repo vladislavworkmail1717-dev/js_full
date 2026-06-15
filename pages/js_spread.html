@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-10" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0 maximum-scale=1.0 minimum-scale=1.0"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..1000;1,100..1000&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Урок js 32</title>
+    <script>
+      // //////Spread-оператор (...)  розгартання
+      // const firstArray = [1, 2, 3];
+      // const secondArray = [4, 5, 6];
+      // // Об'єднання масивів
+      // const combinedArray = [...firstArray, ...secondArray];
+      // console.log(combinedArray); // Виведе: [1, 2, 3, 4, 5, 6]
+
+      // const firstObject = { name: "John" };
+      // const secondObject = { age: 30 };
+      // // Об'єднання об'єктів
+      // const combinedObject = { ...firstObject, ...secondObject };
+      // console.log(combinedObject); // Виведе: { name: 'John', age: 30 }
+
+      // function sum(a, b, c) {
+      //   return a + b + c;
+      // }
+      // let numbers = [1, 2, 3, 4];
+      // // Передача елементів масиву як аргументів
+      // console.log(sum(...numbers)); // Виведе: 6
+
+      // ////////Rest-оператор (...) збирання
+      // numbers = [1, 2, 3, 4, 5];
+      // const [first, second, ...rest] = numbers;
+      // console.log(first); // Виведе: 1
+      // console.log(second); // Виведе: 2
+      // console.log(rest); // Виведе: [3, 4, 5]
+
+      // const person = { name: "John", age: 30, city: "New York" };
+      // const { name, ...last } = person;
+      // const { name1, ...last1 } = person;
+      // console.log(name); // Виведе: John
+      // console.log(last); // Виведе: { age: 30, city: 'New York' }
+      // console.log(name1); // Виведе: undefined
+      // console.log(last1); // Виведе: {name: 'John', age: 30, city: 'New York'}
+
+      // function sum1(...numbers) {
+      //   console.log(numbers); // Виведе: [1, 2, 3, 4, 5]
+      //   return numbers.reduce((acc, current) => acc + current, 0);
+      // }
+      // console.log(sum1(1, 2, 3, 4, 5)); // Виведе: 15
+
+      // const colors = ["червоний", "зелений", "синій"];
+      // const [red, green, blue] = colors;
+      // console.log(red); // Виведе: "червоний"
+      // console.log(green); // Виведе: "зелений"
+      // console.log(blue); // Виведе: "синій"
+
+      // const student = { name2: "Alex", age: 22 };
+      // const { name2, age } = student;
+      // console.log(name2); // Виведе: "Alex"
+      // console.log(age); // Виведе: 22
+
+      // function displayStudentInfo({ name, age }) {
+      //   console.log(`Name: ${name}, Age: ${age}`);
+      // }
+      // displayStudentInfo({ name: "Alex", age: 22 });
+      // // Виведе: "Name: Alex, Age: 22"
+
+      // function* numberGenerator() {
+      //   yield 1;
+      //   yield 2;
+      //   yield 3;
+      // }
+
+      // const gen = numberGenerator(); // Ініціалізація генератора
+
+      // console.log(gen.next()); // Виведе: 1
+
+      // console.log(gen.next().value); // Виведе: 1
+      // console.log(gen.next().value); // Виведе: 2
+      // console.log(gen.next().value); // Виведе: 3
+
+      // const nonIterableObject = {
+      //   a: 1,
+      //   b: 2,
+      //   c: 3,
+      // };
+      // console.log(nonIterableObject); // Виведе: { a: 1, b: 2, c: 3 }
+
+      // nonIterableObject[Symbol.iterator] = function () {
+      //   const keys = Object.keys(this);
+      //   let index = 0;
+      //   return {
+      //     next: () => {
+      //       if (index < keys.length) {
+      //         return { value: this[keys[index++]], done: false };
+      //       } else {
+      //         return { done: true };
+      //       }
+      //     },
+      //   };
+      // };
+      // console.log(nonIterableObject); // Виведе: { a: 1, b: 2, c: 3, [Symbol.iterator]: [Function] }
+      // for (const value of nonIterableObject) {
+      //   console.log(value); // Виведе по черзі: 1, 2, 3
+      // }
+
+      const user = {
+        name: "Олексій",
+        address: { street: "Шевченка", city: "Львів" },
+      };
+
+      // Традиційний спосіб отримання вулиці з адреси користувача
+      const street =
+        user && user.address ? user.address.street : "Вулиця не вказана";
+
+      // Використання оператора необов'язкового ланцюжка
+      const safeStreet = user.address.street ?? "Вулиця не вказана";
+
+      console.log(street); // 'Шевченка'
+      console.log(safeStreet); // 'Шевченка'
+    </script>
+  </head>
+  <body>
+    <h1>
+      32. Spread, Rest, Destructuring Assignment. Generators, Symbol iterators.
+      Optional chaining
+    </h1>
+    <script src="./js/spread.js"></script>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <title>Home Work 16 | Landing page with tailwind</title>
+  <style type="text/tailwindcss">
+      @theme {
+        --font-inter: "Inter", sans-serif;
+
+        --color-primary-200: #043873;
+        --color-primary-100: #4F9CF9;
+
+        --color-secondary-yellow: #FFE492;
+        --color-secondary-blue: #A7CEFC;
+        --color-secondary-gray: #212529;
+      }
+
+      .custom-container {
+        @apply container mx-auto px-2;
+      }
+
+      .text-h1 {
+        @apply text-[72px] font-bold leading-tight;
+      }
+
+      .text-h2 {
+        @apply text-[44px] md:text-[64px] font-bold leading-tight;
+      }
+  </style>
+</head>
+<body class="font-inter text-white text-lg">
+<div class="min-h-dvh overflow-hidden">
+  <header class="flex items-center bg-primary-200 justify-between bg-primary-200 py-4">
+    <div class="custom-container flex items-center justify-between">
+      <img src="./img/logo.svg" alt="Logo" class="mr-auto" />
+      <nav class="hidden items-center gap-8 mr-15 lg:flex">
+        <a href="#" class="text-lg font-light">Products</a>
+        <a href="#" class="text-lg font-light">Solutions</a>
+        <a href="#" class="text-lg font-light">Resources</a>
+        <a href="#" class="text-lg font-light">Pricing</a>
+      </nav>
+      <div class="hidden gap-2 lg:flex">
+        <button class="cursor-pointer h-15 bg-secondary-yellow rounded-lg px-10 text-secondary-gray">Login</button>
+        <button class="cursor-pointer h-15 bg-primary-100 rounded-lg px-6">Try Whitepace free</button>
+      </div>
+      <button class="cursor-pointer block size-6 lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="18" fill="none">
+          <path fill="#fff" fill-rule="evenodd" d="M0 1.5A1.5 1.5 0 011.5 0h21a1.5 1.5 0 010 3h-21A1.5 1.5 0 010 1.5zm0 7A1.5 1.5 0 011.5 7h21a1.5 1.5 0 010 3h-21A1.5 1.5 0 010 8.5zm0 7A1.5 1.5 0 011.5 14h21a1.5 1.5 0 010 3h-21A1.5 1.5 0 010 15.5z" clip-rule="evenodd"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+  <section class="relative z-10 py-35 bg-primary-200">
+    <img src="./img/hero-wave.webp" alt="Wave" class="absolute top-1/2 -translate-y-1/2 -z-10 inset-x-0" />
+    <div class="custom-container flex flex-col xl:flex-row justify-center items-center gap-4">
+      <div class="flex flex-col justify-center  items-center xl:items-start xl:justify-start text-center xl:text-start">
+        <h2 class="text-h2 mb-2">Get More Done with whitepace</h2>
+        <p class="mb-15 text-lg">Project management software that enables your teams to collaborate, plan, analyze and manage everyday tasks</p>
+        <button class="cursor-pointer h-15 bg-primary-100 rounded-lg px-6">Try Whitepace free</button>
+      </div>
+      <img src="https://picsum.photos/seed/picsum/824/550" alt="picture 1" class="rounded-3xl" />
+    </div>
+  </section>
+  <section class="flex flex-col gap-25 py-35">
+    <div class="custom-container flex flex-col xl:flex-row items-center gap-4">
+      <div class="text-secondary-gray flex flex-col justify-center items-center xl:items-start xl:justify-start text-center xl:text-start">
+        <h2 class="text-h2 mb-2">Project Management</h2>
+        <p class="mb-15 text-lg">Images, videos, PDFs and audio files are supported. Create math expressions and diagrams directly from the app. Take photos with the mobile app and save them to a note.</p>
+        <button class="cursor-pointer h-15 bg-primary-100 rounded-lg px-6 text-white">Get Started</button>
+      </div>
+      <img src="https://picsum.photos/id/427/750/550" alt="picture 2" class="rounded-3xl" />
+    </div>
+    <div class="custom-container flex flex-col-reverse xl:flex-row items-center gap-25">
+      <img src="./img/work.webp" alt="picture 2" class="rounded-3xl w-177" />
+      <div class="text-secondary-gray flex flex-col justify-center items-center xl:items-start xl:justify-start text-center xl:text-start">
+        <h2 class="text-h2 mb-2">Work together</h2>
+        <p class="mb-15 text-lg">With whitepace, share your notes with your colleagues and collaborate on them. You can also publish a note to the internet and share the URL with others.</p>
+        <button class="cursor-pointer h-15 bg-primary-100 rounded-lg px-6 text-white">Try it now</button>
+      </div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

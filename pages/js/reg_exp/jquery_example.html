@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive jQuery Demo</title>
+    <!-- Include jQuery via Google CDN -->
+    <!-- <script src="https://googleapis.com"></script> -->
+    <script
+  src="https://code.jquery.com/jquery-4.0.0.min.js"
+  integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+  crossorigin="anonymous"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f4f9; }
+        .box { width: 150px; height: 150px; background-color: #3498db; margin: 20px 0; border-radius: 8px; }
+        .highlight { border: 3px solid #e74c3c; background-color: #2ecc71; }
+        button { padding: 10px 15px; margin-right: 5px; cursor: pointer; border-radius: 4px; border: 1px solid #ccc; }
+        input { padding: 8px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <h1>Interactive jQuery Code Examples</h1>
+    
+    <!-- 1. Text & CSS Manipulation -->
+    <p id="text-element">This text will change color and content.</p>
+    <button id="btn-change">Modify Text</button>
+
+    <!-- 2. Effects & Animations -->
+    <div id="target-box" class="box"></div>
+    <button id="btn-toggle">Toggle Box Visibility</button>
+    <button id="btn-style">Toggle Custom Class</button>
+
+    <!-- 3. Form Value Tracking -->
+    <br><br>
+    <label for="user-input">Type something: </label>
+    <input type="text" id="user-input" placeholder="Start typing...">
+    <p>Live Output: <strong id="live-output"></strong></p>
+
+    <script>
+        // Ensures the script runs only after the full DOM structure loads
+        $(document).ready(function() {
+
+            // 1. Click Event - Modify Content and Inline Styles
+            $("#btn-change").on("click", function() {
+                $("#text-element")
+                    .text("The text and styling have been updated dynamically!")
+                    .css("color", "#e74c3c");
+            });
+
+            // 2. Click Event - Animation Trigger (Fade In / Fade Out)
+            $("#btn-toggle").on("click", function() {
+                $("#target-box").fadeToggle(400); 
+            });
+
+            // 3. Click Event - Add / Remove CSS Class
+            $("#btn-style").on("click", function() {
+                $("#target-box").toggleClass("highlight");
+            });
+
+            // 4. Keyboard Event - Real-time Value Extraction
+            $("#user-input").on("keyup", function() {
+                let currentText = $(this).val(); 
+                $("#live-output").text(currentText);
+            });
+
+        });
+    </script>
+</body>
+</html>

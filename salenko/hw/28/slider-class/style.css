@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&display=swap');
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0a0a0f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Syne', sans-serif;
+    gap: 16px;
+}
+
+.version-badge {
+    color: #555;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.slider {
+    position: relative;
+    width: 90%;
+    max-width: 960px;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
+    background: #111;
+}
+
+.slider__track {
+    display: flex;
+    height: 520px;
+    transition: transform 0.55s cubic-bezier(.77, 0, .18, 1);
+    cursor: grab;
+    user-select: none;
+}
+
+.slider__track:active {
+    cursor: grabbing;
+}
+
+.slider__slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slider__slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    display: block;
+}
+
+.slider__slide::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, .65) 0%, transparent 55%);
+}
+
+.slider__caption {
+    position: absolute;
+    bottom: 50px;
+    left: 40px;
+    z-index: 2;
+    color: #fff;
+}
+
+.slider__caption-title {
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+.slider__caption-sub {
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, .55);
+    margin-top: 6px;
+}
+
+.slider__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 48px;
+    height: 48px;
+    border: 1.5px solid rgba(255, 255, 255, .25);
+    border-radius: 50%;
+    background: rgba(0, 0, 0, .35);
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    transition: background .25s, border-color .25s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider__btn:hover {
+    background: rgba(255, 255, 255, .2);
+    border-color: rgba(255, 255, 255, .6);
+}
+
+.slider__btn--prev { left: 20px; }
+.slider__btn--next { right: 20px; }
+
+.slider__pause {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    z-index: 10;
+    padding: 8px 16px;
+    border: 1.5px solid rgba(255, 255, 255, .25);
+    border-radius: 20px;
+    background: rgba(0, 0, 0, .35);
+    color: #fff;
+    font-family: 'Syne', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    transition: background .25s, border-color .25s;
+}
+
+.slider__pause:hover {
+    background: rgba(255, 255, 255, .2);
+    border-color: rgba(255, 255, 255, .6);
+}
+
+.slider__pause.is-paused {
+    color: #f59e0b;
+    border-color: rgba(245, 158, 11, .4);
+}
+
+.slider__dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.slider__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .4);
+    cursor: pointer;
+    transition: background .3s, width .3s;
+    border: none;
+}
+
+.slider__dot.is-active {
+    background: #fff;
+    width: 22px;
+    border-radius: 3px;
+}
+
+.slider__progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #f59e0b, #ef4444);
+    width: 0%;
+    z-index: 10;
+    transition: none;
+}
+
+.slider__progress.animating {
+    transition: width linear;
+}
+
+.slider__counter {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    z-index: 10;
+    color: rgba(255, 255, 255, .6);
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 640px) {
+    .slider__track { height: 320px; }
+    .slider__caption-title { font-size: 22px; }
+    .slider__caption { bottom: 30px; left: 20px; }
+    .slider__btn { width: 38px; height: 38px; font-size: 16px; }
+}
