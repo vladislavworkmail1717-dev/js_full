@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Подключение шрифта Pacifico для логотипа -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <title>Movie App</title>
+</head>
+
+<body>
+  <!-- Шапка сайта с логотипом и поиском -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#" class="logo">Movie App</a>
+      <form class="search">
+        <!-- КЛАСС ИСПРАВЛЕН НА .header__search ДЛЯ СИНХРОНИЗАЦИИ С JS -->
+        <input type="text" placeholder="Search for a movie..." class="header__search">
+        <button type="submit" class="search__button">Search</button>
+      </form>
+    </div>
+  </header>
+
+  <!-- Основной контейнер для контента -->
+  <main class="container">
+    <!-- ТЕПЕРЬ КОНТЕЙНЕР ОДИН И НАХОДИТСЯ ВНУТРИ ТЕГА MAIN -->
+    <div class="movies"></div>
+  </main>
+
+  <!-- Скрипт подключаем в самом конце тела документа -->
+  <script src="app.js" defer></script>
+</body>
+
+</html>
+

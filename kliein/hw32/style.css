@@ -1,0 +1,188 @@
+/* ==========================================================================
+   1. СБРОС СТИЛЕЙ И БАЗОВЫЕ НАСТРОЙКИ
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  line-height: 1.5;
+}
+
+/* Контейнер для центрирования контента */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ==========================================================================
+   2. ШАПКА САЙТА (HEADER)
+   ========================================================================== */
+.header {
+  background-color: #111111;
+  padding: 15px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* Логотип со шрифтом Pacifico */
+.logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 28px;
+  color: #ff4757;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* Форма поиска */
+.search {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.header__search {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 2px solid #333333;
+  border-radius: 4px;
+  background-color: #222222;
+  color: #ffffff;
+  outline: none;
+  width: 250px;
+  transition: border-color 0.3s ease, width 0.3s ease;
+}
+
+.header__search:focus {
+  border-color: #ff4757;
+  width: 300px;
+}
+
+.search__button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #ff4757;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.search__button:hover {
+  background-color: #ff6b81;
+}
+
+/* ==========================================================================
+   3. ОСНОВНОЙ КОНТЕНТ И СЕТКА ФИЛЬМОВ
+   ========================================================================== */
+main {
+  padding: 40px 0;
+}
+
+/* Сетка для динамических карточек из JavaScript */
+.movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+/* ==========================================================================
+   4. СТИЛИ ДЛЯ КАРТОЧЕК (Ожидаемая HTML-структура из JS)
+   ========================================================================== */
+/* Эти стили заработают, когда ваш JS начнет рендерить карточки внутрь .movies */
+.movie-card {
+  background-color: #222222;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(255, 71, 87, 0.2);
+}
+
+.movie-card__poster {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  background-color: #333333; /* Заглушка пока грузится постер */
+}
+
+.movie-card__info {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-grow: 1;
+}
+
+.movie-card__title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.movie-card__rating {
+  align-self: flex-start;
+  background-color: #333333;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Подсветка рейтинга (можно добавлять классы через JS) */
+.movie-card__rating--green { color: #2ed573; }
+.movie-card__rating--orange { color: #ffa502; }
+.movie-card__rating--red { color: #ff4757; }
+
+/* ==========================================================================
+   5. АДАПТИВНОСТЬ (MEDIA QUERIES)
+   ========================================================================== */
+@media (max-width: 600px) {
+  .header__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .search {
+    width: 100%;
+  }
+
+  .header__search {
+    width: 100%;
+  }
+
+  .header__search:focus {
+    width: 100%;
+  }
+}
